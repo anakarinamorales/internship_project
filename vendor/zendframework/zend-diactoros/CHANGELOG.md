@@ -2,18 +2,11 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.3.11 - 2017-04-06
+## 1.3.11 - TBD
 
 ### Added
 
 - Nothing.
-
-### Changes
-
-- [#241](https://github.com/zendframework/zend-diactoros/pull/241) changes the
-  constraint by which the package provides `psr/http-message-implementation` to
-  simply `1.0` instead of `~1.0.0`, to follow how other implementations provide
-  PSR-7.
 
 ### Deprecated
 
@@ -25,13 +18,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Fixed
 
-- [#161](https://github.com/zendframework/zend-diactoros/pull/161) adds
-  additional validations to header names and values to ensure no malformed values
-  are provided.
-
-- [#234](https://github.com/zendframework/zend-diactoros/pull/234) fixes a
-  number of reason phrases in the `Response` instance, and adds automation from
-  the canonical IANA sources to ensure any new phrases added are correct.
+- Nothing.
 
 ## 1.3.10 - 2017-01-23
 

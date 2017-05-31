@@ -31,7 +31,7 @@ use Psr\Http\Message\UriInterface;
  */
 class ServerRequest implements ServerRequestInterface
 {
-    use RequestTrait;
+    use MessageTrait, RequestTrait;
 
     /**
      * @var array

@@ -2,7 +2,6 @@
 
 /**
  * Created by Ana Karina Morales Machado
- * Date: 24/05/2017
  */
 class ClientInterface //extends Model
 {
