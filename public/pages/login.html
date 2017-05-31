@@ -23,6 +23,9 @@
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- Social Buttons CSS -->
+    <link href="../vendor/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -49,24 +52,47 @@
                         <!--<h1>
                             <span class="glyphicon glyphicon-user col-md-offset-5"></span></p>
                         </h1>-->
-                        <h3>Panel Heading</h3>
+                        <h3>Colocar ícone usuário aqui</h3>
                     </div>
                     <div class="panel-body">
                         <form role="form">
                             <fieldset>
+
+                                <!-- Login com mídias sociais -->
+                                <div id="login-medias">
+                                    <a class="btn btn-block btn-social btn-google-plus">
+                                        <i class="fa fa-google-plus"></i> Sign in with Google
+                                    </a>
+                                    <a class="btn btn-block btn-social btn-facebook">
+                                        <i class="fa fa-facebook"></i> Sign in with Facebook
+                                    </a>
+                                    <a><br></a>
+                                </div>
+
+                                <!-- Login normal -->
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                                 </div>
+
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
+
                                 <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="Remember Me">Remember Me
                                     </label>
                                 </div>
+
+
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                                <button class="btn btn-lg btn-primary btn-block">Login</button>
+
+                                <div class="col-md-offset-3">
+                                    <label>
+                                        <a href=""><br>Esqueceu sua senha?</a>
+                                    </label>
+                                </div>
                             </fieldset>
                         </form>
                     </div>

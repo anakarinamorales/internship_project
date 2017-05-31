@@ -3,9 +3,6 @@
 declare(strict_types=1);
 namespace GERSERV\models;
 
-use Illuminate\Database\Eloquent\Model;
-
-
 
 class Client extends \ClientInterface
 {
