@@ -7,7 +7,7 @@ class CreateServicesClients extends AbstractMigration
     public function up()
     {
         $this->table('services_clients')
-            ->addColumn('payment_method')
+            ->addColumn('payment_method', 'string')
             ->addColumn('subscription_date', 'datetime')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
