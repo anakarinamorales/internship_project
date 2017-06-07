@@ -1,32 +1,17 @@
 {
-  "name": "13bits/gerenciamento-serviços",
-  "authors": [
-    {
-      "name": "Ana Karina Morales Machado",
-      "email": "akarinammachado@gmail.com"
-    }
-  ],
-  "require": {
-      "robmorgan/phinx": "0.7.1",
-      "xtreamwayz/pimple-container-interop": "^1.0",
-      "aura/router": "3.1.0",
-      "zendframework/zend-diactoros": "1.3.10",
-      "twig/twig": "~1.0",
-      "jasny/auth": "1.0.1",
-      "vlucas/phpdotenv": "2.4"
-  },
-  "autoload":{
-    "psr-4":{
-      "GERSERV\\": "src/"
-    }
-  },
-  "require-dev": {
-    "fzaninotto/faker": "1.6.0",
-    "squizlabs/php_codesniffer": "*"
-  },
-  "scripts": {
-        "post-install-cmd": [
-            "vendor/bin/phinx migrate"
-        ]
+    "name": "karina/projeto_estagio",
+    "authors": [
+        {
+            "name": "Ana Karina",
+            "email": "akarinammachado@gmail.com"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "0.7.1"
+    },
+     "autoload": {
+        "psr-4": {
+    		"PROJEst\\": "src/"
+    	}
     }
 }

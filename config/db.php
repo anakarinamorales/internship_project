@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'default_connection' => [
-        'driver' => getenv('DB_DRIVER'),
-        'host' => getenv('DB_HOST'),
-        'database' => getenv('DB_DATABASE'),
-        'username' => getenv('DB_USERNAME'),
-        'password' => getenv('DB_PASSWORD'),
+    'development' => [
+        'driver' => 'mysql',
+        'host' => 'localhost',
+        'database' => 'projeto_estagio',
+        'username' => 'root',
+        'password' => '123',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci'
     ]
