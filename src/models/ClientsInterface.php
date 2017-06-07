@@ -1,9 +1,9 @@
 <?php
-
+namespace PROJEst;
 /**
  * Created by Ana Karina Morales Machado
  */
-class ClientInterface //extends Model
+class ClientsInterface //extends Model
 {
     public function getId():int;
     public function getFullname():string;

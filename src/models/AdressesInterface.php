@@ -1,9 +1,9 @@
 <?php
-namespace GERSERV\models;
+namespace PROJEst\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AddressInterface
+class AdressesInterface
 {
 
 }

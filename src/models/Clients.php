@@ -1,10 +1,10 @@
 <?php
 
 declare(strict_types=1);
-namespace GERSERV\models;
+namespace PROJEst\models;
 
 
-class Client extends \ClientInterface
+class Clients extends \ClientInterface
 {
     public function getId()
     {
