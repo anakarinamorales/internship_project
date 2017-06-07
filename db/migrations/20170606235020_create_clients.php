@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateClient extends AbstractMigration
+class CreateClients extends AbstractMigration
 {
     public function up()
     {
