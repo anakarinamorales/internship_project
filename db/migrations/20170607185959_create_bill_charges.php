@@ -8,7 +8,7 @@ class CreateBillCharges extends AbstractMigration
     {
         $this->table('bill_charges')
             ->addColumn('billing_date', 'datetime')
-            ->addColumn('value', 'string')
+            ->addColumn('value', 'integer')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
             ->save();

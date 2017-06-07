@@ -8,7 +8,7 @@ class CreateSubcriptionTypes extends AbstractMigration
     {
         $this->table('subscription_types')
             ->addColumn('description', 'string')
-            ->addColumn('discount', 'string')
+            ->addColumn('discount', 'integer')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
             ->save();

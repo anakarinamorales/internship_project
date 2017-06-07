@@ -8,12 +8,12 @@ class CreateAdresses extends AbstractMigration
     {
         $this->table('adresses')
             ->addColumn('street', 'string')
-            ->addColumn('number', 'string')
+            ->addColumn('number', 'integer')
             ->addColumn('neighborhood', 'string')
             ->addColumn('city', 'string')
             ->addColumn('state', 'string')
             ->addColumn('country', 'string')
-            ->addColumn('postal_code', 'string')
+            ->addColumn('postal_code', 'integer')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
             ->save();
