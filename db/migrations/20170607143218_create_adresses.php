@@ -14,6 +14,8 @@ class CreateAdresses extends AbstractMigration
             ->addColumn('state', 'string')
             ->addColumn('country', 'string')
             ->addColumn('postal_code', 'string')
+            ->addColumn('created_at', 'datetime')
+            ->addColumn('updated_at', 'datetime')
             ->save();
 
     }

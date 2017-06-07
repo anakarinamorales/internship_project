@@ -8,6 +8,8 @@ class CreateBillAlerts extends AbstractMigration
     {
         $this->table('bill_alerts')
             ->addColumn('status', 'string')
+            ->addColumn('created_at', 'datetime')
+            ->addColumn('updated_at', 'datetime')
             ->save();
     }
 

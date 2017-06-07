@@ -10,6 +10,8 @@ class CreateResponsibles extends AbstractMigration
             ->addColumn('name', 'string')
             ->addColumn('phone', 'string')
             ->addColumn('email', 'string')
+            ->addColumn('created_at', 'datetime')
+            ->addColumn('updated_at', 'datetime')
             ->save();
     }
 
