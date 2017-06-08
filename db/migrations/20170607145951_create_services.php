@@ -2,15 +2,23 @@
 
 use Phinx\Migration\AbstractMigration;
 
+/**
+ * @category DatabaseTable
+ *
+ * @author ana.machado
+ * @since 1.0.0
+ */
 class CreateServices extends AbstractMigration
 {
     public function up()
     {
         $this->table('services')
+            //Colunas
             ->addColumn('description', 'string')
             ->addColumn('value', 'integer')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
+
             ->save();
     }
 

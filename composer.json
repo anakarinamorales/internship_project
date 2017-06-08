@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-        "robmorgan/phinx": "0.7.1"
+        "robmorgan/phinx": "0.8.1"
     },
      "autoload": {
         "psr-4": {
