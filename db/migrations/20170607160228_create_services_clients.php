@@ -16,6 +16,6 @@ class CreateServicesClients extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('services_clients');
+        //$this->dropTable('services_clients');
     }
 }

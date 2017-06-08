@@ -17,6 +17,6 @@ class CreateResponsibles extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('responsibles');
+        //$this->dropTable('responsibles');
     }
 }

@@ -15,6 +15,6 @@ class CreateBillAlerts extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('bill_alerts');
+        //$this->dropTable('bill_alerts');
     }
 }
