@@ -16,6 +16,6 @@ class CreateServices extends AbstractMigration
 
     public function down()
     {
-        //$this->dropTable('services');
+        $this->dropTable('services');
     }
 }

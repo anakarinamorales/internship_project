@@ -15,6 +15,6 @@ class CreateBillChargesStatus extends AbstractMigration
 
     public function down()
     {
-        //$this->dropTable('bill_charges_status');
+        $this->dropTable('bill_charges_status');
     }
 }

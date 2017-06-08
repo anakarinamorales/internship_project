@@ -16,6 +16,6 @@ class CreateSubcriptionTypes extends AbstractMigration
 
     public function down()
     {
-        //$this->dropTable('subscription_types');
+        $this->dropTable('subscription_types');
     }
 }

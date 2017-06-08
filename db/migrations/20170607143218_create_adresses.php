@@ -22,6 +22,6 @@ class CreateAdresses extends AbstractMigration
 
     public function down()
     {
-        //$this->dropTable('adresses');
+        $this->dropTable('adresses');
     }
 }

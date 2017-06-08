@@ -12,19 +12,14 @@ class CreateClients extends AbstractMigration
             ->addColumn('phone', 'string')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
+            ->addColumn('address', 'integer')
+                //->addForeignKey('address', 'adresses', 'id', array('delete'=>'SET_NULL', 'update'=>'NO_ACTION'))
             ->save();
-
-        $refTable = $this->table('adresses');
-        $refTable->addColumn('address', 'integer')
-            ->adForeignKey('address', 'adresses', 'id', array('delete'=>'SET_NULL', 'update'=>'NO_ACTION'))
-            ->save();
-
-
     }
 
 
     public function down()
     {
-        //$this->dropTable('clients');
+        $this->dropTable('clients');
     }
 }
