@@ -10,5 +10,26 @@ namespace PROJEst\models;
  */
 class PaymentMethods
 {
+	private $id;
+	private $description;
 
+	public function getId()
+	{
+		return $this->id;
+	}
+
+	public function setId(integer $id)
+	{
+		$this->id = $id;
+	}
+
+	public function getDescription()
+	{
+		return $this->description;
+	}
+
+	public function setDescription(string $description)
+	{
+		$this->description = $description;
+	}
 }

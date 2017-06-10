@@ -10,28 +10,70 @@ namespace PROJEst\models;
  */
 class Clients
 {
+    private $id;
+    private $firstName;
+    private $surname;
+    private $phone;
+    private $address;
+    private $responsible;
+
     public function getId()
     {
-        //return an int;
+        return $this->id;
     }
-    public function getFullname()
+
+    public function setId(integer $id)
     {
-        //return a string;
+        $this->id = $id;
     }
+
     public function getFirstName()
     {
-        //return a string;
+        return $this->firstName;
     }
+
+    public function setFirstName(string $firstName)
+    {
+        $this->firstName = $firstName;
+    }
+
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    public function setSurname(string $surname)
+    {
+        $this->surname = $surname;
+    }
+
     public function getPhone()
     {
-        //return a string;
+        return $this->phone;
     }
-    public function getAdress()
+
+    public function setPhone(string $phone)
     {
-        //return an Adress;
+        $this->phone = $phone;
     }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function setAddress(Address $address)
+    {
+        $this->address = $address;
+    }
+
     public function getResponsible()
     {
-        //return a Responsible;
+        return $this->responsible;
+    }
+
+    public function setResponsible(Responsible $responsible)
+    {
+        $this->responsible = $responsible;
     }
 }
