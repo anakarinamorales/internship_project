@@ -1,10 +1,14 @@
 <?php
 
-declare(strict_types=1);
 namespace PROJEst\models;
 
-
-class Clients extends \ClientInterface
+/**
+ * @category Model
+ *
+ * @author ana.machado
+ * @since 1.0.0
+ */
+class Clients
 {
     public function getId()
     {

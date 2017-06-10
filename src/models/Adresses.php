@@ -1,8 +1,14 @@
 <?php
+
 namespace PROJEst\models;
 
-
-class Adresses extends AdressesInterface
+/**
+ * @category Model
+ *
+ * @author ana.machado
+ * @since 1.0.0
+ */
+class Adresses
 {
 
 }

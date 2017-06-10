@@ -1,8 +1,14 @@
 <?php
+
 namespace PROJEst\models;
 
-
-class Responsibles extends ResponsiblesInterface
+/**
+ * @category Model
+ *
+ * @author ana.machado
+ * @since 1.0.0
+ */
+class Responsibles
 {
 
 }

@@ -1,7 +1,14 @@
 <?php
+
 namespace PROJEst\models;
 
-class ServicesClients extends ServicesClientsInterface
+/**
+ * @category Model
+ *
+ * @author ana.machado
+ * @since 1.0.0
+ */
+class ServicesClients
 {
 
 }
