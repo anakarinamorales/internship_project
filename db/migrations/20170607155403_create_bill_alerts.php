@@ -14,9 +14,12 @@ class CreateBillAlerts extends AbstractMigration
     {
         $this->table('bill_alerts')
             //Colunas
-            ->addColumn('status', 'string')
+            ->addColumn('status', 'string') //TODO Verificar se precisa limitar este campo
+            ->addColumn('bill', 'integer')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
+
+            ->addForeignKey('bill', 'bills', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
 
             ->save();
     }

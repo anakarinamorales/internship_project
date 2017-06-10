@@ -1,3 +1,4 @@
+
 <?php
 
 use Phinx\Migration\AbstractMigration;
@@ -8,13 +9,13 @@ use Phinx\Migration\AbstractMigration;
  * @author ana.machado
  * @since 1.0.0
  */
-class CreateBillChargesStatus extends AbstractMigration
+class CreatePaymentMethods extends AbstractMigration
 {
     public function up()
     {
-        $this->table('bill_charges_status')
+        $this->table('payment_methods')
             //Colunas
-            ->addColumn('status_description', 'string')
+            ->addColumn('description', 'string')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
 
@@ -23,6 +24,6 @@ class CreateBillChargesStatus extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('bill_charges_status');
+        $this->dropTable('payment_methods');
     }
 }

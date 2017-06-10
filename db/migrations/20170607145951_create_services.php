@@ -15,7 +15,7 @@ class CreateServices extends AbstractMigration
         $this->table('services')
             //Colunas
             ->addColumn('description', 'string')
-            ->addColumn('value', 'integer')
+            ->addColumn('value', 'float')
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
 

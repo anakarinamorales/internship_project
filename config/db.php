@@ -5,8 +5,8 @@ return [
         'driver' => 'mysql',
         'host' => 'localhost',
         'database' => 'projeto_estagio',
-        'username' => 'root',
-        'password' => '123',
+        'username' => 'projetoestagio',
+        'password' => 'projetoestagio',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci'
     ]
