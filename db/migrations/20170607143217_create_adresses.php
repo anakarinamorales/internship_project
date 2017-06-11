@@ -21,14 +21,15 @@ class CreateAdresses extends AbstractMigration
             ->addColumn('state', 'string')
             ->addColumn('country', 'string')
             ->addColumn('postal_code', 'integer')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
+
+            //Created_at e updated_at
+            ->addTimestamps()
 
             ->save();
     }
 
     public function down()
     {
-        $this->dropTable('adresses');
+         $this->dropTable('adresses');
     }
 }

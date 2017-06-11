@@ -16,14 +16,15 @@ class CreateServices extends AbstractMigration
             //Colunas
             ->addColumn('description', 'string')
             ->addColumn('value', 'float')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
+
+            //Created_at e updated_at
+            ->addTimestamps()
 
             ->save();
     }
 
     public function down()
     {
-        $this->dropTable('services');
+         $this->dropTable('services');
     }
 }

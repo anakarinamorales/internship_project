@@ -19,8 +19,9 @@ class CreateClients extends AbstractMigration
             ->addColumn('phone', 'string')
             ->addColumn('address', 'integer')
             ->addColumn('responsible', 'integer')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
+
+            //Created_at e updated_at
+            ->addTimestamps()
             
             //Chaves estrangeiras
             ->addForeignKey('address', 'adresses', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
@@ -31,6 +32,6 @@ class CreateClients extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('clients');
+         $this->dropTable('clients');
     }
 }

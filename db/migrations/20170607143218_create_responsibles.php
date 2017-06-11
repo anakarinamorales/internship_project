@@ -17,14 +17,15 @@ class CreateResponsibles extends AbstractMigration
             ->addColumn('name', 'string')
             ->addColumn('phone', 'string')
             ->addColumn('email', 'string')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
+
+            //Created_at e updated_at
+            ->addTimestamps()
             
             ->save();
     }
 
     public function down()
     {
-        $this->dropTable('responsibles');
+         $this->dropTable('responsibles');
     }
 }

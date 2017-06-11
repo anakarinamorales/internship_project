@@ -19,8 +19,9 @@ class CreateServicesClients extends AbstractMigration
             ->addColumn('service', 'integer')
             ->addColumn('subscription_type', 'integer')
             ->addColumn('payment_method', 'integer')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
+
+            //Created_at e updated_at
+            ->addTimestamps()
 
             //Chaves estrangeiras
             ->addForeignKey('client', 'clients', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
@@ -33,6 +34,6 @@ class CreateServicesClients extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('services_clients');
+         $this->dropTable('services_clients');
     }
 }

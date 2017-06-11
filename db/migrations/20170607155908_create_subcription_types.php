@@ -16,14 +16,15 @@ class CreateSubcriptionTypes extends AbstractMigration
             //Colunas
             ->addColumn('description', 'string')
             ->addColumn('discount', 'integer')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
+
+            //Created_at e updated_at
+            ->addTimestamps()
             
             ->save();
     }
 
     public function down()
     {
-        $this->dropTable('subscription_types');
+         $this->dropTable('subscription_types');
     }
 }

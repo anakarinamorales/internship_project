@@ -19,9 +19,11 @@ class CreateBills extends AbstractMigration
             ->addColumn('value', 'float')
             ->addColumn('paid', 'boolean')
             ->addColumn('client', 'integer')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
 
+            //Created_at e updated_at
+            ->addTimestamps()
+
+            //Chaves estrangeiras
             ->addForeignKey('client', 'clients', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
 
             ->save();
@@ -29,6 +31,6 @@ class CreateBills extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('bill_charges');
+         $this->dropTable('bills');
     }
 }

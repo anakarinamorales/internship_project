@@ -16,14 +16,15 @@ class CreatePaymentMethods extends AbstractMigration
         $this->table('payment_methods')
             //Colunas
             ->addColumn('description', 'string')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
+
+            //Created_at e updated_at
+            ->addTimestamps()
 
             ->save();
     }
 
     public function down()
     {
-        $this->dropTable('payment_methods');
+         $this->dropTable('payment_methods');
     }
 }
