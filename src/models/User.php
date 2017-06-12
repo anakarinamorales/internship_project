@@ -1,6 +1,6 @@
 <?php
 
-namespace PROJEst\models;
+namespace PROJEst;
 
 /**
  * @category Model
@@ -8,14 +8,11 @@ namespace PROJEst\models;
  * @author ana.machado
  * @since 1.0.0
  */
-class Bills
+class User
 {
 	private $id;
-	private $billingDate;
-	private $dueDate;
-	private $value;
-	private $paid;
-	private $client;
+	private $email;
+	private $password;
 
 	public function getId()
 	{
@@ -27,53 +24,23 @@ class Bills
 		$this->id = $id;
 	}
 
-	public function getBillingDate()
+	public function getEmail()
 	{
-		return $this->billingDate;
+		return $this->email;
 	}
 
-	public function setBillingDate(date $billingDate)
+	public function setEmail(string $email)
 	{
-		$this->billingDate = $billingDate;
+		$this->email = $email;
 	}
 
-	public function getDueDate()
+	public function getPassword()
 	{
-		return $this->dueDate;
+		return $this->password;
 	}
 
-	public function setDueDate(date $dueDate)
+	public function setPassword(string $password)
 	{
-		$this->dueDate = $dueDate;
-	}
-
-	public function getValue()
-	{
-		return $this->value;
-	}
-
-	public function setValue(float $value)
-	{
-		$this->value = $value;
-	}
-
-	public function getPaid()
-	{
-		return $this->paid;
-	}
-
-	public function setPaid(boolean $paid)
-	{
-		$this->paid = $paid;
-	}
-
-	public function getClient()
-	{
-		return $this->client;
-	}
-
-	public function setClient(Client $client)
-	{
-		$this->client = $client;
+		$this->password = $password;
 	}
 }
