@@ -11,8 +11,8 @@ namespace PROJEst;
 class SubscriptionTypes
 {
 	private $id;
-	private $description;
-	private $discount;
+	private $email;
+	private $password;
 
 	public function getId()
 	{
@@ -24,23 +24,23 @@ class SubscriptionTypes
 		$this->id = $id;
 	}
 
-	public function getDescription()
+	public function getEmail()
 	{
-		return $this->description;
+		return $this->email;
 	}
 
-	public function setDescription(string $description)
+	public function setEmail(string $email)
 	{
-		$this->description = $description;
+		$this->email = $email;
 	}
 
-	public function getDiscount()
+	public function getPassword()
 	{
-		return $this->discount;
+		return $this->password;
 	}
 
-	public function setDiscount(integer $discount)
+	public function setPassword(string $password)
 	{
-		$this->discount = $discount;
+		$this->password = $password;
 	}
 }

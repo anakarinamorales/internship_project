@@ -279,13 +279,20 @@ table.dataTable thead .sorting:after {
 .panel-yellow > a:hover {
   color: #df8a13;
 }
+.login-title {
+  color: #FFFFFF;
+  font-family: fontawesome;
+  margin-top: 37.5%;
+  text-align: center;
+}
 .panel-heading {
   text-align: center;
 }
 .panel-heading > span {
   font-size: 40px;
 }
-.panel-heading > h1 {
+.panel-heading > p {
+  font-size: 26px;
   margin: .25em 0 0;
 }
 .timeline {
