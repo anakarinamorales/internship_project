@@ -26,6 +26,10 @@ class ComposerStaticInitd2c8afb5ffd903a023cadd14d1e40803
             'Phinx\\' => 6,
             'PROJEst\\' => 8,
         ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -64,6 +68,10 @@ class ComposerStaticInitd2c8afb5ffd903a023cadd14d1e40803
         'PROJEst\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
     );
 
