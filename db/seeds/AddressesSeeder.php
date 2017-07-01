@@ -3,17 +3,15 @@
 
 use Phinx\Seed\AbstractSeed;
 
-class AdressesSeeder extends AbstractSeed
+class AddressesSeeder extends AbstractSeed
 {
 
     public function run()
     {
-        $faker = \Faker\Factory::create();
-        $adresses = $this->table('adresses');
-        $data=[];
+        $faker = Faker\Factory::create();
 
         //seeding data
-        foreach(range(1,10) as $value){
+        foreach(range(0, 9) as $value) {
         	$data[] = [
 				'street' => $faker->streetName,
 				'number' => $faker->buildingNumber,
@@ -21,11 +19,10 @@ class AdressesSeeder extends AbstractSeed
 				'city' => $faker->city,
 				'state' => $faker->state,
 				'country' => $faker->country,
-				'postal_code' => $faker->postcode,
-				'created_at' => date('Y-m-d H:i:s'),
-				'updated_at' => date('Y-m-d H:i:s')	
+				'postal_code' => $faker->postcode
         	];
         }
-        $adresses->insert($data)->save();
+
+        $this->insert('addresses', $data);
     }
 }

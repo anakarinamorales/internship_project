@@ -24,7 +24,7 @@ class CreateClients extends AbstractMigration
             ->addTimestamps()
             
             //Chaves estrangeiras
-            ->addForeignKey('address', 'adresses', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
+            ->addForeignKey('address', 'addresses', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
             ->addForeignKey('responsible', 'responsibles', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
 
             ->save();

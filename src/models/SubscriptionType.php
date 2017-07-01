@@ -8,7 +8,7 @@ namespace PROJEst\models;
  * @author ana.machado
  * @since 1.0.0
  */
-class SubscriptionTypes
+class SubscriptionType
 {
 	private $id;
 	private $description;

@@ -8,11 +8,11 @@ use Phinx\Migration\AbstractMigration;
  * @author ana.machado
  * @since 1.0.0
  */
-class CreateAdresses extends AbstractMigration
+class CreateAddresses extends AbstractMigration
 {
     public function up()
     {
-        $this->table('adresses')
+        $this->table('addresses')
             //Colunas
             ->addColumn('street', 'string')
             ->addColumn('number', 'integer')
@@ -20,7 +20,7 @@ class CreateAdresses extends AbstractMigration
             ->addColumn('city', 'string')
             ->addColumn('state', 'string')
             ->addColumn('country', 'string')
-            ->addColumn('postal_code', 'integer')
+            ->addColumn('postal_code', 'string')
 
             //Created_at e updated_at
             ->addTimestamps()
@@ -30,6 +30,6 @@ class CreateAdresses extends AbstractMigration
 
     public function down()
     {
-         $this->dropTable('adresses');
+         $this->dropTable('addresses');
     }
 }

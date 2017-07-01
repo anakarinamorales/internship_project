@@ -9,8 +9,8 @@ environments:
         adapter: mysql
         host: localhost
         name: projeto_estagio
-        user: root
-        pass: 123
+        user: projetoestagio
+        pass: projetoestagio
         port: 3306
         charset: utf8
 
@@ -18,8 +18,8 @@ environments:
         adapter: mysql
         host: localhost
         name: projeto_estagio
-        user: root
-        pass: 123
+        user: projetoestagio
+        pass: projetoestagio
         port: 3306
         charset: utf8
 
@@ -27,8 +27,8 @@ environments:
         adapter: mysql
         host: localhost
         name: projeto_estagio
-        user: root
-        pass: 123
+        user: projetoestagio
+        pass: projetoestagio
         port: 3306
         charset: utf8
 
