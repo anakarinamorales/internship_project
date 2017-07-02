@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">13 bits Admin</a>
+        <a class="navbar-brand" href="index.php">13 bits Admin</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -97,7 +97,7 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -121,7 +121,7 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Estatísticas<span class="fa arrow"></span></a>
@@ -139,22 +139,22 @@
                     <a href="#"><i class="fa fa-users fa-fw"></i> Clientes<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="newClient.html">Cadastrar</a>
+                            <a href="newClient.php">Cadastrar</a>
                         </li>
                         <li>
-                            <a href="clients.html">Exibir</a>
+                            <a href="clients.php">Exibir</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="servicos.html"><i class="fa fa-tags fa-fw"></i> Serviços<span class="fa arrow"></span></a>
+                    <a href="servicos.php"><i class="fa fa-tags fa-fw"></i> Serviços<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="newService.html">Cadastrar novo serviço</a>
+                            <a href="newService.php">Cadastrar novo serviço</a>
                         </li>
                         <li>
-                            <a href="services.html">Exibir tabela de serviços</a>
+                            <a href="services.php">Exibir tabela de serviços</a>
                         </li>
                     </ul>
                 </li>
@@ -162,15 +162,15 @@
                     <a href="#"><i class="fa fa-wrench fa-fw"></i> Painel do administrador<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="newPaymentMethod.html">Cadastrar método de pagamento</a>
+                            <a href="newPaymentMethod.php">Cadastrar método de pagamento</a>
                         </li>
                         
                         <li>
-                            <a href="newUser.html">Cadastrar novo usuário</a>
+                            <a href="newUser.php">Cadastrar novo usuário</a>
                         </li>
 
                         <li>
-                            <a href="newSubscription.html">Cadastrar novo tipo de assinatura</a>
+                            <a href="newSubscription.php">Cadastrar novo tipo de assinatura</a>
                         </li>
                     </ul>
                 </li>

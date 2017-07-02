@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="Ana Karina Machado">
 
-        <title>13 bits Admin - Home</title>
+        <title>13 Bits Admin - Cadastro de Cliente</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,40 +32,65 @@
         <![endif]-->
         <script src="https://www.w3schools.com/lib/w3.js"></script>
     </head>
-
-
     <body>
-
         <div id="wrapper">
-
             <!-- Navigation -->
-            <div w3-include-html="navigation.html"></div>
-            <script>
-                w3.includeHTML();
-            </script>
+            <?php include 'navigation.php'?>
 
-            <!-- CONTEÚDO -->
+             <!-- CONTEÚDO -->
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Estatísticas resumidas</h1>
+                        <h1 class="page-header"></h1>
                     </div>
                 </div>
 
                 <div class="row">
-                    <!-- Flots -->
+
+                    <!-- Form -->
                     <div class="col-lg-8">
-                        <div w3-include-html="flots.html"></div>
-                        <script>
-                            w3.includeHTML();
-                        </script>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-plus-circle fa-fw"></i>Novo Usuário
+                            </div>
+
+                            <div class="panel-body">    
+                                <form role="form">
+                                    <div class="col-lg-12 form-group" id="name">
+                                        <label>Nome </label>
+                                        <input class="form-control" placeholder="aaaa">
+                                    </div>
+
+                                     <div class="col-lg-12 form-group" id="surname">
+                                        <label>Sobrenome </label>
+                                        <input class="form-control" placeholder="aaaa">
+                                    </div>
+
+                                    <div class="col-lg-12 form-group" id="email">
+                                        <label>E-mail </label>
+                                        <input class="form-control" placeholder="email@email.com">
+                                    </div>
+
+                                    <div class="col-lg-8 form-group" id="cadastrar">
+                                        <button type="button" class="btn btn-outline btn-primary">Cadastrar</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Usuários Cadastrados
+                                </div>
+
+                                <div class="panel-body">
+                                    aaaaaa
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Notifications Panel -->
-                    <div w3-include-html="notifications.html"></div>
-                    <script>
-                        w3.includeHTML();
-                    </script>
+                    <?php include 'notifications.php'?>
                 </div>
             </div>
         </div>
@@ -80,18 +104,7 @@
         <!-- Metis Menu Plugin JavaScript -->
         <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-        <!-- Flot Charts JavaScript -->
-        <script src="../vendor/flot/excanvas.min.js"></script>
-        <script src="../vendor/flot/jquery.flot.js"></script>
-        <script src="../vendor/flot/jquery.flot.pie.js"></script>
-        <script src="../vendor/flot/jquery.flot.resize.js"></script>
-        <script src="../vendor/flot/jquery.flot.time.js"></script>
-        <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-        <script src="../data/flot-data.js"></script>
-
         <!-- Custom Theme JavaScript -->
         <script src="../dist/js/sb-admin-2.js"></script>
-
     </body>
-
 </html>

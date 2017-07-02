@@ -1,6 +1,5 @@
 <?php
-
-	namespace PROJEst;
+	// namespace PROJEst\controller;
 
 	require_once("db.php");
 	require_once("../models/User.php");
@@ -33,3 +32,4 @@
 		unset ($_SESSION['password']);
 		header("Location: http://".$host."/public/pages/login.html?msg=Password está incorreto");
 	}
+?>

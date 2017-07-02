@@ -1,6 +1,5 @@
 <?php
-
-namespace PROJEst\models;
+// namespace PROJEst\models;
 
 /**
  * @category Model

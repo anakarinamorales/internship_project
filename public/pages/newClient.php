@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
-
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Ana Karina Machado">
 
         <title>13 Bits Admin - Cadastro de Cliente</title>
 
@@ -32,17 +28,11 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
     </head>
-
     <body>
         <div id="wrapper">
-
             <!-- Navigation -->
-            <div w3-include-html="navigation.html"></div>
-            <script>
-                w3.includeHTML();
-            </script>
+            <?php include 'navigation.php'?>
 
             <!-- CONTEÚDO -->
             <div id="page-wrapper">
@@ -155,10 +145,7 @@
                     </div>
                 </div>
                 <!-- Notifications Panel -->
-                <div w3-include-html="notifications.html"></div>
-                <script>
-                    w3.includeHTML();
-                </script>
+                <?php include 'notifications.php'?>
             </div>
         </div>
         
