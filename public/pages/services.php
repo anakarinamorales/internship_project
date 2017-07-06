@@ -48,7 +48,7 @@
                 <div class="row">
                     <!-- Tabela de Serviços -->
                     <div class="col-lg-8">
-                        <?php include 'servicesTables.php'?>
+                        <?php include 'serviceTables.php'?>
                     </div>
 
                     <!-- Painel de Alertas -->

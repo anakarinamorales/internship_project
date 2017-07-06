@@ -34,7 +34,7 @@
             <!-- Navigation -->
             <?php include 'navigation.php'?>
 
-            <!-- CONTEÃšDO -->
+            
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
@@ -43,7 +43,6 @@
                 </div>
 
                 <div class="row">
-                    <!-- Flots -->
                     <div class="col-lg-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">

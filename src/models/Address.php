@@ -7,7 +7,7 @@
  * @author ana.machado
  * @since 1.0.0
  */
-class Adress
+class Address
 {
 	private $id;
 	private $neighborhood;

@@ -102,24 +102,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>Mensal</td>
-                            <td>R$48,99</td>
-                            <td> 5% </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">2</td>
-                            <td>Semestral</td>
-                            <td>R$48,99</td>
-                            <td>15%</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">3</td>
-                            <td>Anual</td>
-                            <td>R$48,99</td>
-                            <td>25%</td>
-                        </tr>
+                        <?php
+                        require_once("../../src/controller/services.php");
+                        require_once("../../src/controller/subscriptionTypes.php");
+
+                        $serviceController = new ServiceController();
+                        $service = $clientController->getServiceById(3);
+
+                        $subscriptionTypeController = new SubscriptionTypeController();
+                        $subscriptionType = $subscriptionTypeController->getAllSubscriptionTypes();
+
+                        for ($i=0; $i<sizeof($clientes); $i++) {
+                            $subscriptionType = $subscriptionType[$i];
+                            $evenOdd = $i%2==0 ? 'even' : 'odd';
+
+                            echo('<tr class="'.$evenOdd.' gradeX">');
+                            echo('<td>'.$subscriptionType->getId()'</td>');
+                            echo('<td>'.$subscriptionType->getDescription()'</td>');
+                            echo('<td>'.$service->getValue()'</td>');
+                            echo('<td>'.$subscriptionType->getDiscount()'</td>');
+                            echo('</tr>');
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
