@@ -10,7 +10,7 @@
 class Address
 {
 	private $id;
-	private $neighborhood;
+	private $street;
 	private $number;
 	private $neighborhood;
 	private $city;
@@ -23,19 +23,19 @@ class Address
 		return $this->id;
 	}
 
-	public function setId(integer $id)
+	public function setId(int $id)
 	{
 		$this->id = $id;
 	}
 
 	public function getStreet()
 	{
-		return $this->neighborhood;
+		return $this->street;
 	}
 
-	public function setStreet(string $neighborhood)
+	public function setStreet(string $street)
 	{
-		$this->neighborhood = $neighborhood;
+		$this->street = $street;
 	}
 
 	public function getNumber()
@@ -43,7 +43,7 @@ class Address
 		return $this->number;
 	}
 
-	public function setNumber(integer $number)
+	public function setNumber(string $number)
 	{
 		$this->number = $number;
 	}
@@ -93,7 +93,7 @@ class Address
 		return $this->postalCode;
 	}
 
-	public function setPostalCode(integer $postalCode)
+	public function setPostalCode(string $postalCode)
 	{
 		$this->postalCode = $postalCode;
 	}

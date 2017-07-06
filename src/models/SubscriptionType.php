@@ -18,7 +18,7 @@ class SubscriptionType
 		return $this->id;
 	}
 
-	public function setId(integer $id)
+	public function setId(int $id)
 	{
 		$this->id = $id;
 	}

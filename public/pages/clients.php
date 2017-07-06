@@ -34,11 +34,10 @@
             <!-- Navigation -->
             <?php include 'navigation.php'?>
 
-            
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header"><i class="fa fa-users fa-fw"></i>Cientes</h1>
+                        <h1 class="page-header"><i class="fa fa-users fa-fw"></i>Clientes</h1>
                     </div>
                 </div>
 
@@ -106,6 +105,9 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="../dist/js/sb-admin-2.js"></script>
+
+        <!-- Custom JavaScript -->
+        <script src="../js/custom.js"></script>
 
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>

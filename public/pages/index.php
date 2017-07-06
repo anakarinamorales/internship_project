@@ -74,5 +74,8 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="../dist/js/sb-admin-2.js"></script>
+
+        <!-- Custom JavaScript -->
+        <script src="../js/custom.js"></script>
     </body>
 </html>

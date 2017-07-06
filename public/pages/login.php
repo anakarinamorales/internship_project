@@ -91,6 +91,6 @@
         <script src="../dist/js/sb-admin-2.js"></script>
 
         <!-- Custom JavaScript -->
-        <script src="../dist/js/custom.js"></script>
+        <script src="../js/custom.js"></script>
     </body>
 </html>

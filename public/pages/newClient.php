@@ -50,91 +50,90 @@
                             <i class="fa fa-plus-circle fa-fw"></i>Novo Cliente
                         </div>
                         <div class="panel-body">
-                            
-                                <form role="form">
-                                    <div class="col-lg-6 form-group" id="name">
-                                        <label>Nome </label>
-                                        <input class="form-control" placeholder="aaa">
+                                <form role="form" method="POST" action="../../src/controller/newClient.php">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="name">Nome</label>
+                                        <input id="name" name="name" class="form-control" placeholder="ex.: João">
                                     </div>
 
-                                    <div class="col-lg-6 form-group" id="surname">
-                                        <label>Sobrenome </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="surname">Sobrenome </label>
+                                        <input id="surname" name="surname" class="form-control" placeholder="ex.: Silva">
                                     </div>
 
-                                    <div class="col-lg-6 form-group" id="phone">
-                                        <label>Telefone </label>
-                                        <input class="form-control" placeholder="(99)99999-9999">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="phone">Telefone </label>
+                                        <input id="phone" name="phone" class="form-control" placeholder="ex.: (99)99999-9999">
                                     </div>
 
-                                    <div class="col-lg-6 form-group" id="email">
-                                        <label>E-mail </label>
-                                        <input class="form-control" placeholder="email@email.com">
+                                    <!-- <div class="col-lg-6 form-group">
+                                        <label for="email">E-mail </label>
+                                        <input id="email" name="email" class="form-control" placeholder="ex.: email@email.com">
+                                    </div> -->
+
+
+                                    <div class="col-lg-8 form-group">
+                                        <label for="street">Rua </label>
+                                        <input id="street" name="street" class="form-control" placeholder="ex.: Avenida Brasil">
                                     </div>
 
-
-                                    <div class="col-lg-8 form-group" id="street">
-                                        <label>Rua </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-2 form-group">
+                                        <label for="number">N° </label>
+                                        <input id="number" name="number" class="form-control" placeholder="ex.: 42">
                                     </div>
 
-                                    <div class="col-lg-2 form-group" id="number">
-                                        <label>N° </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-2 form-group">
+                                        <label for="others">Complemento </label>
+                                        <input id="others" name="others" class="form-control" placeholder="ex.: ap 102">
                                     </div>
 
-                                    <div class="col-lg-2 form-group" id="others">
-                                        <label>Complemento </label>
-                                        <input class="form-control" placeholder="aaa">
-                                    </div>
-
-                                    <div class="col-lg-6 form-group" id="neighborhood">
-                                        <label>Bairro </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="neighborhood">Bairro </label>
+                                        <input id="neighborhood" name="neighborhood" class="form-control" placeholder="ex.: Centro">
                                     </div>
                                     
-                                    <div class="col-lg-6 form-group" id="postalcode">
-                                        <label>CEP</label>
-                                        <input class="form-control" placeholder="99999-999">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="postalCode">CEP</label>
+                                        <input id="postalCode" name="postalCode" class="form-control" placeholder="ex.: 99999-999">
                                     </div>
 
-                                    <div class="col-lg-8 form-group" id="city">
-                                        <label>Cidade </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-8 form-group">
+                                        <label for="city">Cidade </label>
+                                        <input id="city" name="city" class="form-control" placeholder="ex.: Porto Alegre">
                                     </div>
 
-                                    <div class="col-lg-2 form-group" id="state">
-                                        <label>UF </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-2 form-group">
+                                        <label for="state">UF </label>
+                                        <input id="state" name="state" class="form-control" placeholder="ex.: Rio Grande Do Sul">
                                     </div>
 
-                                    <div class="col-lg-2" id="country">
-                                        <label>País </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-2">
+                                        <label for="country">País </label>
+                                        <input id="country" name="country" class="form-control" placeholder="ex.: Brasil">
                                     </div>
 
                                     <div class="col-lg-12 form-group">
                                         <label><p class="form-control-static">Dados do Responsável</p></label>
                                     </div>
 
-                                    <div class="col-lg-6 form-group" id="responsiblename">
-                                        <label>Nome </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="responsibleName">Nome </label>
+                                        <input id="responsibleName" name="responsibleName" class="form-control" placeholder="ex.: Maria">
                                     </div>
 
-                                    <div class="col-lg-6 form-group" id="responsiblesurname">
-                                        <label>Sobrenome </label>
-                                        <input class="form-control" placeholder="aaa">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="responsibleSurname">Sobrenome </label>
+                                        <input id="responsibleSurname" name="responsibleSurname" class="form-control" placeholder="ex.: Pereira">
                                     </div>
 
-                                    <div class="col-lg-6 form-group" id="responsiblephone">
-                                        <label>Telefone </label>
-                                        <input class="form-control" placeholder="(99)99999-9999">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="responsiblePhone">Telefone </label>
+                                        <input id="responsiblePhone" name="responsiblePhone" class="form-control" placeholder="ex.: (99)99999-9999">
                                     </div>
 
-                                    <div class="col-lg-6 form-group" id="responsibleemail">
-                                        <label>E-mail </label>
-                                        <input class="form-control" placeholder="email@email.com">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="responsibleEmail">E-mail </label>
+                                        <input id="responsibleEmail" name="responsibleEmail" class="form-control" placeholder="ex.: email@email.com">
                                     </div>
 
                                     <div class="col-lg-8">
@@ -160,5 +159,8 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="../dist/js/sb-admin-2.js"></script>
+
+        <!-- Custom JavaScript -->
+        <script src="../js/custom.js"></script>
     </body>
 </html>

@@ -20,8 +20,8 @@
 	$user = $query->fetch();
 
 	if (empty($user)) {
-		header("Location: http://".$host."/public/pages/login.html?msg=Usuário não existe.");
-	} else if ($user['password'] == $password) {
+		header("Location: http://".$host."/public/pages/login.php?msg=Usuário não existe.");
+	} else if ($user->getPassword() == $password) {
 		$_SESSION['user'] = $user;
 		$_SESSION['password'] = $password;
 		$_SESSION['host'] = $host;
@@ -30,6 +30,6 @@
 	} else {
 		unset ($_SESSION['user']);
 		unset ($_SESSION['password']);
-		header("Location: http://".$host."/public/pages/login.html?msg=Password está incorreto");
+		header("Location: http://".$host."/public/pages/login.php?msg=Password está incorreto");
 	}
 ?>
