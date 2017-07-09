@@ -11,7 +11,7 @@
 	
 	$service = new Service();
 	$service->setDescription($_POST['serviceName']);
-	$service->setValue($_POST['serviceValue']);
+	$service->setValue(str_replace(',', '.', $_POST['serviceValue']));
 
 	$serviceController->insert($service);
 
