@@ -8,8 +8,11 @@ class CreateUser extends AbstractMigration
     {
          $this->table('users')
             //Colunas
+            ->addColumn('name', 'string')
+            ->addColumn('surname', 'string')
             ->addColumn('email', 'string')
             ->addColumn('password', 'string')
+            ->addColumn('accountType', 'string')
 
             //Created_at e updated_at
             ->addTimestamps()

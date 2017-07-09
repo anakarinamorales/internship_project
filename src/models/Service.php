@@ -38,7 +38,7 @@ class Service
 		return $this->value;
 	}
 
-	public function setValue(float $value)
+	public function setValue(string $value)
 	{
 		$this->value = $value;
 	}

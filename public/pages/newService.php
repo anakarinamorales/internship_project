@@ -56,38 +56,19 @@
                         </div>
                         <div class="panel-body">
                             
-                            <form role="form">
-                                <div class="col-lg-10 form-group" id="servicename">
-                                    <label>Serviço </label>
-                                    <input class="form-control" placeholder="Tipo de serviço">
+                            <form role="form" method="POST" action="../../src/controller/newService.php">
+                                <div class="col-lg-10 form-group">
+                                    <label for="serviceName">Serviço </label>
+                                    <input class="form-control" placeholder="Tipo de serviço" id="serviceName" name="serviceName">
                                 </div>
 
-                                <div class="col-lg-2 form-group" id="servicevalue">
-                                    <label>Valor (R$) </label>
-                                    <input class="form-control" placeholder="350,00">
-                                </div>
-
-                                <div class="col-lg-12 form-group">
-                                    <label><p class="form-control-static">% desconto por plano</p></label>
-                                </div>
-
-                                <div class="col-lg-2 form-group" id="mensaldiscount">
-                                    <label>Mensal (%) </label>
-                                    <input class="form-control" placeholder="5">
-                                </div>
-
-                                <div class="col-lg-2 form-group" id="semestraldiscount">
-                                    <label>Semestral (%) </label>
-                                    <input class="form-control" placeholder="15">
-                                </div>
-
-                                <div class="col-lg-2 form-group" id="anualdiscount">
-                                    <label>Anual (%) </label>
-                                    <input class="form-control" placeholder="25">
+                                <div class="col-lg-2 form-group">
+                                    <label for="serviceValue">Valor (R$) </label>
+                                    <input class="form-control" placeholder="350,00"  id="serviceValue" name="serviceValue">
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <button type="button" class="btn btn-outline btn-primary">
+                                    <button type="submit" class="btn btn-outline btn-primary">
                                         Cadastrar
                                     </button>
                                 </div>

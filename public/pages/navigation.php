@@ -162,16 +162,9 @@
                     <a href="#"><i class="fa fa-wrench fa-fw"></i> Painel do administrador<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="newPaymentMethod.php">Cadastrar método de pagamento</a>
-                        </li>
-                        
-                        <li>
                             <a href="newUser.php">Cadastrar novo usuário</a>
                         </li>
 
-                        <li>
-                            <a href="newSubscription.php">Cadastrar novo tipo de assinatura</a>
-                        </li>
                     </ul>
                 </li>
                 

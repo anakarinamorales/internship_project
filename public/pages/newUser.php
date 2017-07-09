@@ -55,24 +55,24 @@
                             </div>
 
                             <div class="panel-body">    
-                                <form role="form">
-                                    <div class="col-lg-12 form-group" id="name">
-                                        <label>Nome </label>
-                                        <input class="form-control" placeholder="aaaa">
+                                <form role="form" method="POST" action="../../src/controller/newUser.php">
+                                    <div class="col-lg-12 form-group">
+                                        <label for="userName"> Nome </label>
+                                        <input class="form-control" placeholder="ex.: Maria" id="userName" name="userName">
                                     </div>
 
-                                     <div class="col-lg-12 form-group" id="surname">
-                                        <label>Sobrenome </label>
-                                        <input class="form-control" placeholder="aaaa">
+                                     <div class="col-lg-12 form-group">
+                                        <label for="userSurname"> Sobrenome </label>
+                                        <input class="form-control" placeholder="ex.: Santos" id="userSurname" name="userSurname">
                                     </div>
 
-                                    <div class="col-lg-12 form-group" id="email">
-                                        <label>E-mail </label>
-                                        <input class="form-control" placeholder="email@email.com">
+                                    <div class="col-lg-12 form-group">
+                                        <label for="userEmail"> E-mail </label>
+                                        <input class="form-control" placeholder="ex.: email@email.com" id="userEmail" name="userEmail">
                                     </div>
 
                                     <div class="col-lg-8 form-group" id="cadastrar">
-                                        <button type="button" class="btn btn-outline btn-primary">Cadastrar</button>
+                                        <button type="submit" class="btn btn-outline btn-primary">Cadastrar</button>
                                     </div>
                                 </form>
                             </div>

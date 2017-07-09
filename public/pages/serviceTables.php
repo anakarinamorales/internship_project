@@ -107,20 +107,20 @@
                         require_once("../../src/controller/subscriptionTypes.php");
 
                         $serviceController = new ServiceController();
-                        $service = $clientController->getServiceById(3);
+                        $service = $serviceController->getServiceById(3);
 
                         $subscriptionTypeController = new SubscriptionTypeController();
                         $subscriptionType = $subscriptionTypeController->getAllSubscriptionTypes();
 
-                        for ($i=0; $i<sizeof($clientes); $i++) {
+                        for ($i=0; $i<sizeof($subscriptionType); $i++) {
                             $subscriptionType = $subscriptionType[$i];
                             $evenOdd = $i%2==0 ? 'even' : 'odd';
 
                             echo('<tr class="'.$evenOdd.' gradeX">');
-                            echo('<td>'.$subscriptionType->getId()'</td>');
-                            echo('<td>'.$subscriptionType->getDescription()'</td>');
-                            echo('<td>'.$service->getValue()'</td>');
-                            echo('<td>'.$subscriptionType->getDiscount()'</td>');
+                                echo('<td>'.$subscriptionType->getId().'</td>');
+                                echo('<td>'.$subscriptionType->getDescription().'</td>');
+                                echo('<td>'.$service->getValue().'</td>');
+                                echo('<td>'.$subscriptionType->getDiscount().'</td>');
                             echo('</tr>');
                         }
                         ?>
