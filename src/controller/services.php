@@ -1,7 +1,7 @@
 <?php
 	class ServiceController {
 		function getServiceById(int $id) {
-			require_once("db.php");
+			require("db.php");
 			require_once("../../src/models/Service.php");
 
 			$sql = "SELECT * FROM services WHERE id = :id;";

@@ -16,24 +16,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>Mensal</td>
-                            <td>R$20,99</td>
-                            <td> - </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">2</td>
-                            <td>Semestral</td>
-                            <td>R$20,99</td>
-                            <td>15%</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">3</td>
-                            <td>Anual</td>
-                            <td>R$20,99</td>
-                            <td>25%</td>
-                        </tr>
+                        <?php
+                        require_once("../../src/controller/services.php");
+                        require_once("../../src/controller/subscriptionTypes.php");
+
+                        $emailServiceController = new ServiceController();
+                        $emailService = $emailServiceController->getServiceById(2);
+
+                        $emailSubscriptionTypeController = new SubscriptionTypeController();
+                        $emailSubscriptionTypes = $emailSubscriptionTypeController->getAllSubscriptionTypes();
+
+                        for ($i=0; $i<sizeof($emailSubscriptionTypes); $i++) {
+                            $emailSubscriptionType = $emailSubscriptionTypes[$i];
+                            $evenOdd = $i%2==0 ? 'even' : 'odd';
+
+                            echo('<tr class="'.$evenOdd.' gradeX">');
+                                echo('<td>'.$emailSubscriptionType->getId().'</td>');
+                                echo('<td>'.$emailSubscriptionType->getDescription().'</td>');
+                                echo('<td>'.$emailService->getValue().'</td>');
+                                echo('<td>'.$emailSubscriptionType->getDiscount().'%'.'</td>');
+                            echo('</tr>');
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -59,24 +63,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>Mensal</td>
-                            <td>R$33,99</td>
-                            <td> - </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">2</td>
-                            <td>Semestral</td>
-                            <td>R$33,99</td>
-                            <td>15%</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">3</td>
-                            <td>Anual</td>
-                            <td>R$33,99</td>
-                            <td>25%</td>
-                        </tr>
+                        <?php
+                        require_once("../../src/controller/services.php");
+                        require_once("../../src/controller/subscriptionTypes.php");
+
+                        $hostServiceController = new ServiceController();
+                        $hostService = $hostServiceController->getServiceById(2);
+
+                        $hostSubscriptionTypeController = new SubscriptionTypeController();
+                        $hostSubscriptionTypes = $hostSubscriptionTypeController->getAllSubscriptionTypes();
+
+                        for ($i=0; $i<sizeof($hostSubscriptionTypes); $i++) {
+                            $hostSubscriptionType = $hostSubscriptionTypes[$i];
+                            $evenOdd = $i%2==0 ? 'even' : 'odd';
+
+                            echo('<tr class="'.$evenOdd.' gradeX">');
+                                echo('<td>'.$hostSubscriptionType->getId().'</td>');
+                                echo('<td>'.$hostSubscriptionType->getDescription().'</td>');
+                                echo('<td>'.$hostService->getValue().'</td>');
+                                echo('<td>'.$hostSubscriptionType->getDiscount().'%'.'</td>');
+                            echo('</tr>');
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -106,21 +114,21 @@
                         require_once("../../src/controller/services.php");
                         require_once("../../src/controller/subscriptionTypes.php");
 
-                        $serviceController = new ServiceController();
-                        $service = $serviceController->getServiceById(3);
+                        $comboServiceController = new ServiceController();
+                        $comboService = $comboServiceController->getServiceById(3);
 
-                        $subscriptionTypeController = new SubscriptionTypeController();
-                        $subscriptionType = $subscriptionTypeController->getAllSubscriptionTypes();
+                        $comboSubscriptionTypeController = new SubscriptionTypeController();
+                        $comboSubscriptionTypes = $comboSubscriptionTypeController->getAllSubscriptionTypes();
 
-                        for ($i=0; $i<sizeof($subscriptionType); $i++) {
-                            $subscriptionType = $subscriptionType[$i];
+                        for ($i=0; $i<sizeof($comboSubscriptionTypes); $i++) {
+                            $comboSubscriptionType = $comboSubscriptionTypes[$i];
                             $evenOdd = $i%2==0 ? 'even' : 'odd';
 
                             echo('<tr class="'.$evenOdd.' gradeX">');
-                                echo('<td>'.$subscriptionType->getId().'</td>');
-                                echo('<td>'.$subscriptionType->getDescription().'</td>');
-                                echo('<td>'.$service->getValue().'</td>');
-                                echo('<td>'.$subscriptionType->getDiscount().'</td>');
+                                echo('<td>'.$comboSubscriptionType->getId().'</td>');
+                                echo('<td>'.$comboSubscriptionType->getDescription().'</td>');
+                                echo('<td>'.$comboService->getValue().'</td>');
+                                echo('<td>'.$comboSubscriptionType->getDiscount().'%'.'</td>');
                             echo('</tr>');
                         }
                         ?>
