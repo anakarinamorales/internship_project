@@ -1,140 +1,67 @@
-<div class="col-lg-6">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            E-mail
-        </div>
-        <!-- /.panel-heading -->
-        <div class="panel-body">
-            <div class="table-responsive">
-                <table class="table table-striped  table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Plano</th>
-                            <th>Valor</th>
-                            <th>Desconto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        require_once("../../src/controller/services.php");
-                        require_once("../../src/controller/subscriptionTypes.php");
+<?php
+require_once("../../src/controller/services.php");
+require_once("../../src/controller/subscriptionTypes.php");
 
-                        $emailServiceController = new ServiceController();
-                        $emailService = $emailServiceController->getServiceById(2);
+$subscriptionTypeController = new SubscriptionTypeController();
+$serviceController = new ServiceController();
 
-                        $emailSubscriptionTypeController = new SubscriptionTypeController();
-                        $emailSubscriptionTypes = $emailSubscriptionTypeController->getAllSubscriptionTypes();
+$services = $serviceController->getAllServices();
+$subscriptionTypes = $subscriptionTypeController->getAllSubscriptionTypes();
 
-                        for ($i=0; $i<sizeof($emailSubscriptionTypes); $i++) {
-                            $emailSubscriptionType = $emailSubscriptionTypes[$i];
-                            $evenOdd = $i%2==0 ? 'even' : 'odd';
+for ($i=0; $i < sizeof($services); $i++) {
+    $service = $services[$i];
 
-                            echo('<tr class="'.$evenOdd.' gradeX">');
-                                echo('<td>'.$emailSubscriptionType->getId().'</td>');
-                                echo('<td>'.$emailSubscriptionType->getDescription().'</td>');
-                                echo('<td>'.$emailService->getValue().'</td>');
-                                echo('<td>'.$emailSubscriptionType->getDiscount().'%'.'</td>');
-                            echo('</tr>');
-                        }
-                        ?>
-                    </tbody>
-                </table>
+    ?>
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?= $service->getDescription().' (R$ '.str_replace('.', ',', $service->getValue()).')' ?>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped  table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Plano (Período)</th>
+                                    <th>Desconto (%)</th>
+                                    <th>Valor (R$)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                for ($x=0; $x<sizeof($subscriptionTypes); $x++) {
+                                    $subscriptionType = $subscriptionTypes[$x];
+                                    $evenOdd = $x%2==0 ? 'even' : 'odd';
+
+                                    echo('<tr class="'.$evenOdd.' gradeX">');
+                                        echo('<td>'.$subscriptionType->getId().'</td>');
+                                        echo('<td>'.$subscriptionType->getDescription().'</td>');
+                                        echo('<td>'.$subscriptionType->getDiscount().'</td>');
+                                        
+                                        $discount = $subscriptionType->getDiscount();
+                                        $discount = $discount/100;
+                                        $serviceValue = $service->getValue();
+                                        $discount = $discount * $serviceValue;
+                                        $total = $serviceValue - $discount;
+
+                                        /* Formata a exibição do valor para duas casas decimais, arredondando os valores*/
+                                        // $total = number_format($total, 2, '.', '');
+
+                                        /* Formata a exibição do valor para até duas casas decimais, sem arredondamento */
+                                        $total = substr($total, 0, strrpos($total, '.')+3);
+
+                                        echo('<td>'.str_replace('.', ',', $total).'</td>');
+                                    echo('</tr>');
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="col-lg-6">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Hospedagem
-        </div>
-        <!-- /.panel-heading -->
-        <div class="panel-body">
-            <div class="table-responsive">
-                <table class="table table-striped  table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Plano</th>
-                            <th>Valor</th>
-                            <th>Desconto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        require_once("../../src/controller/services.php");
-                        require_once("../../src/controller/subscriptionTypes.php");
-
-                        $hostServiceController = new ServiceController();
-                        $hostService = $hostServiceController->getServiceById(2);
-
-                        $hostSubscriptionTypeController = new SubscriptionTypeController();
-                        $hostSubscriptionTypes = $hostSubscriptionTypeController->getAllSubscriptionTypes();
-
-                        for ($i=0; $i<sizeof($hostSubscriptionTypes); $i++) {
-                            $hostSubscriptionType = $hostSubscriptionTypes[$i];
-                            $evenOdd = $i%2==0 ? 'even' : 'odd';
-
-                            echo('<tr class="'.$evenOdd.' gradeX">');
-                                echo('<td>'.$hostSubscriptionType->getId().'</td>');
-                                echo('<td>'.$hostSubscriptionType->getDescription().'</td>');
-                                echo('<td>'.$hostService->getValue().'</td>');
-                                echo('<td>'.$hostSubscriptionType->getDiscount().'%'.'</td>');
-                            echo('</tr>');
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="col-lg-12">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Combo
-        </div>
-        <!-- /.panel-heading -->
-        <div class="panel-body">
-            <div class="table-responsive">
-                <table class="table table-striped  table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Plano</th>
-                            <th>Valor</th>
-                            <th>Desconto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        require_once("../../src/controller/services.php");
-                        require_once("../../src/controller/subscriptionTypes.php");
-
-                        $comboServiceController = new ServiceController();
-                        $comboService = $comboServiceController->getServiceById(3);
-
-                        $comboSubscriptionTypeController = new SubscriptionTypeController();
-                        $comboSubscriptionTypes = $comboSubscriptionTypeController->getAllSubscriptionTypes();
-
-                        for ($i=0; $i<sizeof($comboSubscriptionTypes); $i++) {
-                            $comboSubscriptionType = $comboSubscriptionTypes[$i];
-                            $evenOdd = $i%2==0 ? 'even' : 'odd';
-
-                            echo('<tr class="'.$evenOdd.' gradeX">');
-                                echo('<td>'.$comboSubscriptionType->getId().'</td>');
-                                echo('<td>'.$comboSubscriptionType->getDescription().'</td>');
-                                echo('<td>'.$comboService->getValue().'</td>');
-                                echo('<td>'.$comboSubscriptionType->getDiscount().'%'.'</td>');
-                            echo('</tr>');
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+    <?php
+}
+?>

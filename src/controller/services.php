@@ -14,6 +14,19 @@
 			return $services;
 		}
 
+		function getAllServices() {
+			require("db.php");
+			require_once("../../src/models/Service.php");
+
+			$sql = "SELECT * FROM services;";
+			$query = $conn->prepare($sql);
+			$query->execute();
+			$query->setFetchMode($conn::FETCH_CLASS, 'Service');
+			$services = $query->fetchAll();
+
+			return $services;
+		}
+
 		function insert(Service $service){
 			require("db.php");
 			require_once("../../src/models/Service.php");
