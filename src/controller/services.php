@@ -14,6 +14,18 @@
 			return $services;
 		}
 
+		function getServiceByName($service)
+		{
+			require("db.php");
+			require_once("../../src/models/Service.php");
+			$sql = "SELECT * FROM services WHERE description = :description;";
+			$query = $conn->prepare($sql);
+			$query->bindParam(':description', $id, $conn::PARAM_STR);
+			$query->execute();
+			$query->setFetchMode($conn::FETCH_CLASS, 'Service');
+			$services = $query->fetch();
+		}
+
 		function getAllServices() {
 			require("db.php");
 			require_once("../../src/models/Service.php");

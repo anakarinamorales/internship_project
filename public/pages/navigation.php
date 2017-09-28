@@ -75,7 +75,7 @@
                     </a>
                 </li>
 
-                
+
                 <li class="divider"></li>
                 <li>
                     <a class="text-center" href="#">
@@ -123,26 +123,31 @@
                 <li>
                     <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Estatísticas<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="">Por Cliente</a>
+                            <a href="clientStatistics.php">Por Cliente</a>
                         </li>
                         <li>
                             <a href="">Por Serviço</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
-                </li>
+                <!--</li> -->
                 <li>
                     <a href="#"><i class="fa fa-users fa-fw"></i> Clientes<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="newClient.php">Cadastrar</a>
                         </li>
+
                         <li>
                             <a href="clients.php">Exibir</a>
+                        </li>
+
+                        <li>
+                            <a href="linkService.php">Vincular serviço</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
@@ -165,9 +170,14 @@
                             <a href="newUser.php">Cadastrar novo usuário</a>
                         </li>
 
+                        <li>
+                            <a href="">Exibir usuários</a>
+                        </li>
+
+
                     </ul>
                 </li>
-                
+
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

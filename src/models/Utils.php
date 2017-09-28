@@ -4,7 +4,7 @@
 /**
  * @category Model
  *
- * @author Ana Karina
+ * @author ana.machado
  * @since 1.0.0
  */
 class Utils

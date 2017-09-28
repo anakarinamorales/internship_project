@@ -17,3 +17,6 @@ sleep 1
 php vendor/bin/phinx seed:run -s ServicesClientsSeeder
 sleep 1
 php vendor/bin/phinx seed:run -s UserSeeder
+sleep 1
+php vendor/bin/phinx seed:run -s ServicesSubscriptionTypesSeeder
+sleep 1

@@ -16,7 +16,7 @@ class UserSeeder extends AbstractSeed
             'surname' => 'Ritter',
 			'email' => 'teste@teste.com',
 			'password' => '123123',
-            'accoutType' => 'ADM'
+            'accountType' => 'ADM'
     	];
 
         $this->insert('users', $data);

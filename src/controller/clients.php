@@ -32,5 +32,14 @@
 
 			return $client;
 		}
+
+		function deleteClient(int $clientId) {
+			require("db.php");
+			require_once("../../src/models/Client.php");
+
+			$sql = "DELETE FROM clients WHERE id = :clientId;";
+			$query = $conn->prepare($sql);
+			$query = bindParam(':clientId', $clientId, $conn::PARAM_INT);
+		}
 	}
 ?>
