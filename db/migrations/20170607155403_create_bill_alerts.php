@@ -21,7 +21,7 @@ class CreateBillAlerts extends AbstractMigration
             ->addTimestamps()
 
             //Chaves estrangeiras
-            ->addForeignKey('bill', 'bills', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
+            ->addForeignKey('bill', 'bills', 'id', array('delete'=>'CASCADE', 'update'=>'CASCADE'))
 
             ->save();
     }

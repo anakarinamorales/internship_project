@@ -39,7 +39,12 @@
 
 			$sql = "DELETE FROM clients WHERE id = :clientId;";
 			$query = $conn->prepare($sql);
-			$query = bindParam(':clientId', $clientId, $conn::PARAM_INT);
+			// var_dump($clientId);exit;
+			$query->bindParam(':clientId', $clientId, $conn::PARAM_INT);
+			$query->execute();
+			$countDel = $query->rowCount();
+			//var_dump($countDel);exit;
+			return $countDel;
 		}
 	}
 ?>

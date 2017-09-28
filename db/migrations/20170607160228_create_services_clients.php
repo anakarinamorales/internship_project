@@ -24,10 +24,10 @@ class CreateServicesClients extends AbstractMigration
             ->addTimestamps()
 
             //Chaves estrangeiras
-            ->addForeignKey('client', 'clients', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
-            ->addForeignKey('service', 'services', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
-            ->addForeignKey('payment_method', 'payment_methods', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
-            ->addForeignKey('subscription_type', 'subscription_types', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
+            ->addForeignKey('client', 'clients', 'id', array('delete'=>'CASCADE', 'update'=>'CASCADE'))
+            ->addForeignKey('service', 'services', 'id', array('delete'=>'CASCADE', 'update'=>'CASCADE'))
+            ->addForeignKey('payment_method', 'payment_methods', 'id', array('delete'=>'CASCADE', 'update'=>'CASCADE'))
+            ->addForeignKey('subscription_type', 'subscription_types', 'id', array('delete'=>'CASCADE', 'update'=>'CASCADE'))
 
             ->save();
     }

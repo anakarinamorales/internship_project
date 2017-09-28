@@ -89,7 +89,7 @@
                                                <a href="#" style= class="btn tip-top" title="Editar cliente">
                                                     <i class="glyphicon glyphicon-pencil"></i>
                                                 </a>
-                                                <a href="../../src/controller/deleteClient.php?id=$cliendId style= class="btn tip-top" title="Deletar cliente">
+                                                <a href="../../src/views/deleteClient.php?id='.$clientId.'"class="btn tip-top" title="Deletar cliente">
                                                     <i class="fa fa-times fa-fw"></i>
                                                 </a>
                                                 <a href="#" style= class="btn tip-top" title="Ver mais detalhes">

@@ -22,8 +22,8 @@ class CreateServicesSubscriptionTypes extends AbstractMigration
             ->addTimestamps()
 
             //Chaves estrangeiras
-            ->addForeignKey('service', 'services', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
-            ->addForeignKey('subscription_type', 'subscription_types', 'id', array('delete'=>'NO_ACTION', 'update'=>'NO_ACTION'))
+            ->addForeignKey('service', 'services', 'id', array('delete'=>'CASCADE', 'update'=>'CASCADE'))
+            ->addForeignKey('subscription_type', 'subscription_types', 'id', array('delete'=>'CASCADE', 'update'=>'CASCADE'))
 
             ->save();
     }
