@@ -81,18 +81,18 @@
                                             echo('<td>NULL</td>');
                                             echo('<td>'.$client->getPhone().'</td>');
 
-											//ao clicar em linkar serviço, enviar o id do cliente
+											
                                             echo('<td>
-                                               <a href="linkService.php" style= class="btn tip-top" title="Vincular serviço">
+                                               <a href="linkService.php?id='.$clientId.'"style="" class="btn tip-top" title="Vincular serviço">
                                                     <i class="glyphicon glyphicon-link"></i>
                                                </a>
-                                               <a href="#" style= class="btn tip-top" title="Editar cliente">
+                                               <a href="editClient.php?id='.$clientId.'" style="" class="btn tip-top" title="Editar cliente">
                                                     <i class="glyphicon glyphicon-pencil"></i>
                                                 </a>
-                                                <a href="../../src/views/deleteClient.php?id='.$clientId.'"class="btn tip-top" title="Deletar cliente">
+                                                <a href="../../src/views/deleteClient.php?id='.$clientId.'" style="" class="btn tip-top" title="Deletar cliente">
                                                     <i class="fa fa-times fa-fw"></i>
                                                 </a>
-                                                <a href="#" style= class="btn tip-top" title="Ver mais detalhes">
+                                                <a href="#?id='.$clientId.'" style="" class="btn tip-top" title="Ver mais detalhes">
                                                     <i class="fa fa-arrow-right  fa-fw"></i>
                                                 </a>
                                             </td>');

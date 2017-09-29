@@ -16,11 +16,11 @@ session_start();
 
 $countDel = $clientController->deleteClient($clientId);
 
-var_dump($countDel);
+//var_dump($countDel);
 
-// if ($countDel==0) {
-// 	header("Location: http://".$host."/public/pages/clients.php?msg=Erro ao excluir cliente!");
-// }else{
-// 	header("Location: http://".$host."/public/pages/clients.php?msg=Cliente excluído com sucesso!");
-// }
+if ($countDel==0) {
+	header("Location: http://".$host."/public/pages/clients.php?msg=Erro ao excluir cliente!");
+}else{
+	header("Location: http://".$host."/public/pages/clients.php?msg=Cliente excluído com sucesso!");
+}
 ?>
