@@ -16,7 +16,7 @@ $clientController = new ClientController();
 //pega as informações do cliente
 $client = $clientController->getClientById($clientId);
 
-//var_dump($client['email']);exit;
+//var_dump($client['first_name']);exit;
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,7 +75,7 @@ $client = $clientController->getClientById($clientId);
                                 <form role="form" method="POST" action="../../src/controller/newClient.php">
                                     <div class="col-lg-6 form-group">
                                         <label for="name">Nome</label>
-                                        <input id="name" name="name" class="form-control" value="<?= $client['name'] ?>" />
+                                        <input id="name" name="name" class="form-control" value="<?= $client['first_name'] ?>" />
                                     </div>
 
                                     <div class="col-lg-6 form-group">
@@ -104,10 +104,10 @@ $client = $clientController->getClientById($clientId);
                                         <input id="number" name="number" class="form-control" <input value="<?= $client['number'] ?>" />
                                     </div>
 
-                                    <!-- <div class="col-lg-2 form-group">
+                                    <div class="col-lg-2 form-group">
                                         <label for="others">Complemento </label>
-                                        <input id="others" name="others" class="form-control" <input value="<?= $client['complement'] ?>" />
-                                    </div> -->
+                                        <input id="others" name="others" class="form-control" <input value="<?= $client['others'] ?>" />
+                                    </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="neighborhood">Bairro </label>
@@ -140,22 +140,22 @@ $client = $clientController->getClientById($clientId);
 
                                     <div class="col-lg-6 form-group">
                                         <label for="responsibleName">Nome </label>
-                                        <input id="responsibleName" name="responsibleName" class="form-control" value="<?= $client['name'] ?>" />
+                                        <input id="responsibleName" name="responsibleName" class="form-control" value="<?= $client['responsible_name'] ?>" />
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="responsibleSurname">Sobrenome </label>
-                                        <input id="responsibleSurname" name="responsibleSurname" class="form-control" value="<?= $client['surname'] ?>" />
+                                        <input id="responsibleSurname" name="responsibleSurname" class="form-control" value="<?= $client['responsible_surname'] ?>" />
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="responsiblePhone">Telefone </label>
-                                        <input id="responsiblePhone" name="responsiblePhone" class="form-control" value="<?= $client['phone'] ?>" />
+                                        <input id="responsiblePhone" name="responsiblePhone" class="form-control" value="<?= $client['responsible_phone'] ?>" />
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="responsibleEmail">E-mail </label>
-                                        <input id="responsibleEmail" name="responsibleEmail" class="form-control" value="<?= $client['email'] ?>" />
+                                        <input id="responsibleEmail" name="responsibleEmail" class="form-control" value="<?= $client['responsible_email'] ?>" />
                                     </div>
 
                                     <div class="col-lg-8">

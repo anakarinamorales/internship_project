@@ -18,6 +18,7 @@ class ClientsSeeder extends AbstractSeed
 				'first_name' => $faker->firstName,
 				'surname' => $faker->lastName,
 				'phone' => $faker->phoneNumber,
+                'email' => $faker->email,
 				'address' => $addressesList[$value]['id'],
 				'responsible' => $responsiblesList[$value]['id'],
         	];

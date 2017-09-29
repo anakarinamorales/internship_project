@@ -10,7 +10,8 @@
 class Responsible
 {
 	private $id;
-	private $name;
+	private $firstName;
+	private $surname;
 	private $phone;
 	private $email;
 
@@ -24,15 +25,25 @@ class Responsible
 		$this->id = $id;
 	}
 
-	public function getName()
+	public function getFirstName()
 	{
-		return $this->name;
+		return $this->firstName;
 	}
 
-	public function setName(string $name)
+	public function setFirstName(string $name)
 	{
 		$this->name = $name;
 	}
+
+	public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    public function setSurname(string $surname)
+    {
+        $this->surname = $surname;
+    }
 
 	public function getPhone()
 	{

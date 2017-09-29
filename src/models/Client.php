@@ -10,9 +10,10 @@
 class Client
 {
     private $id;
-    private $first_name;
+    private $firstName;
     private $surname;
     private $phone;
+    private $email;
     private $address;
     private $responsible;
 
@@ -28,7 +29,7 @@ class Client
 
     public function getFirstName()
     {
-        return $this->first_name;
+        return $this->firstName;
     }
 
     public function setFirstName(string $firstName)
@@ -55,6 +56,18 @@ class Client
     {
         $this->phone = $phone;
     }
+
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+    }
+
 
     public function getAddress()
     {

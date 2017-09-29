@@ -12,6 +12,7 @@ class Address
 	private $id;
 	private $street;
 	private $number;
+	private $others;
 	private $neighborhood;
 	private $city;
 	private $state;
@@ -46,6 +47,16 @@ class Address
 	public function setNumber(string $number)
 	{
 		$this->number = $number;
+	}
+
+	public function getOthers()
+	{
+		return $this->others;
+	}
+
+	public function setOthers(string $others)
+	{
+		$this->others = $others;
 	}
 
 	public function getNeighborhood()

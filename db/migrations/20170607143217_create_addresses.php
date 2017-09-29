@@ -16,6 +16,7 @@ class CreateAddresses extends AbstractMigration
             //Colunas
             ->addColumn('street', 'string')
             ->addColumn('number', 'integer')
+            ->addColumn('others', 'string')
             ->addColumn('neighborhood', 'string')
             ->addColumn('city', 'string')
             ->addColumn('state', 'string')

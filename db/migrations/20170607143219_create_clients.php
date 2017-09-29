@@ -17,6 +17,7 @@ class CreateClients extends AbstractMigration
             ->addColumn('first_name', 'string')
             ->addColumn('surname', 'string')
             ->addColumn('phone', 'string')
+            ->addColumn('email', 'string')
             ->addColumn('address', 'integer')
             ->addColumn('responsible', 'integer')
 

@@ -13,9 +13,10 @@ class ResponsiblesSeeder extends AbstractSeed
         //seeding data
         foreach(range(0, 9) as $value) {
         	$data[] = [
-				'name' => $faker->firstName,
-				'phone' => $faker->phoneNumber,
-				'email' => $faker->email
+				'responsible_name' => $faker->firstName,
+                'responsible_surname' => $faker->lastName,
+				'responsible_phone' => $faker->phoneNumber,
+				'responsible_email' => $faker->email
         	];
         }
 

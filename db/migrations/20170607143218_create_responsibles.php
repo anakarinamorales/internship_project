@@ -14,9 +14,10 @@ class CreateResponsibles extends AbstractMigration
     {
         $this->table('responsibles')
             //Colunas
-            ->addColumn('name', 'string')
-            ->addColumn('phone', 'string')
-            ->addColumn('email', 'string')
+            ->addColumn('responsible_name', 'string')
+            ->addColumn('responsible_surname', 'string')
+            ->addColumn('responsible_phone', 'string')
+            ->addColumn('responsible_email', 'string')
 
             //Created_at e updated_at
             ->addTimestamps()

@@ -15,6 +15,7 @@ class AddressesSeeder extends AbstractSeed
         	$data[] = [
 				'street' => $faker->streetName,
 				'number' => $faker->buildingNumber,
+                'others' => $faker->word,
 				'neighborhood' => $faker->word,
 				'city' => $faker->city,
 				'state' => $faker->state,
