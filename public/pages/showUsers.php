@@ -39,7 +39,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header"><i class="fa fa-users fa-fw"></i>Clientes</h1>
+                    <h1 class="page-header"><i class="fa fa-users fa-fw"></i> Usuários</h1>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                  <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Todos os Clientes
+                            Todos os Usuários
                         </div>
 
                         <!-- /.panel-heading -->
@@ -56,44 +56,33 @@
                                 <thead>
                                     <tr>
                                         <th> Id </th>
-                                        <th>Cliente</th>
-                                        <th>CPF/CNPJ</th>
-                                        <th>Telefone</th>
-                                        <th> </th>
+                                        <th>Nome</th>
+                                        <th>E-mail</th>
+                                        <th>Conta</th>
                                     </tr>
                                 </thead>
                 
                                 <tbody>
                                     <?php
-                                        require_once("../../src/controller/clients.php");
+                                        require_once("../../src/controller/users.php");
 
-                                        $clientController = new ClientController();
-                                        $clients = $clientController->getAllClients();
+                                        $userController = new UserController();
+                                        $users = $userController->getAllUsers();
 
-                                        for ($i=0; $i<sizeof($clients); $i++) {
-                                            $client = $clients[$i];
+                                        for ($i=0; $i<sizeof($users); $i++) {
+                                            $user = $users[$i];
                                             $evenOdd = $i%2==0 ? 'even' : 'odd';
-                                            $clientId = $client->getId();
+                                            $userId = $user->getId();
 
                                             echo('<tr class="'.$evenOdd.' gradeX">');
-                                            echo('<td>'.$client->getId().'</td>');
-                                            echo('<td>'.$client->getFirstName().' '.$client->getSurname().'</td>');
-                                            echo('<td>NULL</td>');
-                                            echo('<td>'.$client->getPhone().'</td>');
+                                            echo('<td>'.$user->getId().'</td>');
+                                            echo('<td>'.$user->getName().' '.$user->getSurname().'</td>');
+                                            echo('<td>'.$user->getEmail().'</td>');
+                                            echo('<td>'.$user->getAccountType().'</td>');
 
-											
                                             echo('<td>
-                                               <a href="linkService.php?id='.$clientId.'"style="" class="btn tip-top" title="Vincular serviço">
-                                                    <i class="glyphicon glyphicon-link"></i>
-                                               </a>
-                                               <a href="editClient.php?id='.$clientId.'" style="" class="btn tip-top" title="Editar cliente">
-                                                    <i class="glyphicon glyphicon-pencil"></i>
-                                                </a>
-                                                <a href="../../src/controller/deleteClient.php?id='.$clientId.'" style="" class="btn tip-top" title="Deletar cliente">
+                                                <a href="../../src/controller/deleteUser.php?id='.$userId.'" style="" class="btn tip-top" title="Deletar usuário">
                                                     <i class="fa fa-times fa-fw"></i>
-                                                </a>
-                                                <a href="detailedClient.php?id='.$clientId.'" style="" class="btn tip-top" title="Ver mais detalhes">
-                                                    <i class="fa fa-arrow-right  fa-fw"></i>
                                                 </a>
                                             </td>');
                                             echo('</tr>');

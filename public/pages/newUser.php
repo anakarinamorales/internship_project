@@ -35,7 +35,7 @@
     <body>
         <div id="wrapper">
             <!-- Navigation -->
-            <?php include 'navigation.php'?>
+            <?php include 'navigation.php';?>
 
              <!-- CONTEÚDO -->
             <div id="page-wrapper">
@@ -77,20 +77,11 @@
                                 </form>
                             </div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Usuários Cadastrados
-                                </div>
-
-                                <div class="panel-body">
-                                    aaaaaa
-                                </div>
-                            </div>
                         </div>
                     </div>
 
                     <!-- Notifications Panel -->
-                    <?php include 'notifications.php'?>
+                    <?php include 'notifications.php';?>
                 </div>
             </div>
         </div>

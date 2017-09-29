@@ -171,7 +171,7 @@
                         </li>
 
                         <li>
-                            <a href="">Exibir usuários</a>
+                            <a href="showUsers.php">Exibir usuários</a>
                         </li>
 
 

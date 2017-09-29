@@ -1,3 +1,20 @@
+<?php
+require_once("../../src/controller/clients.php");
+
+//id do cliente que veio pela url
+$clientId = $_GET['id'];
+
+//cast pra int do id do cliente
+$clientId = (int)$clientId;
+
+//controller do cliente
+$clientController = new ClientController();
+
+//pega as informações do cliente
+$client = $clientController->getClientById($clientId);
+
+//var_dump($client['first_name']);exit;
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,7 +22,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>13 Bits Admin - Cadastro de Cliente</title>
+        <title>13 Bits Admin - Edição de Cliente</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +46,7 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+
     <body>
         <div id="wrapper">
             <!-- Navigation -->
@@ -43,73 +61,74 @@
                 </div>
 
                 <div class="row">
-                    <!-- Form -->
+
+                    <!-- Informações do cliente  -->
                     <div class="col-lg-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                            <i class="fa fa-plus-circle fa-fw"></i>Novo Cliente
+                            <a href="editClient.php?id=<?= $clientId ?>"><i class="glyphicon glyphicon-pencil"></i></a> Informações do Cliente
                         </div>
                         <div class="panel-body">
-                                <form role="form" method="POST" action="../../src/controller/newClient.php">
-                                    <div class="col-lg-6 form-group">
-                                        <label for="name">Nome</label>
-                                        <input id="name" name="name" class="form-control" placeholder="ex.: João">
+                            <!-- <form role="form" method="POST" action="../../src/views/editClient.php"> -->
+                                <div class="col-lg-6 form-group">
+                                    <label for="name">Nome:</label>
+                                        <input id="name" name="name" class="form-control" value="<?= $client['first_name'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="surname">Sobrenome </label>
-                                        <input id="surname" name="surname" class="form-control" placeholder="ex.: Silva">
+                                        <input id="surname" name="surname" class="form-control" <input value="<?= $client['surname'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="phone">Telefone </label>
-                                        <input id="phone" name="phone" class="form-control" placeholder="ex.: (99)99999-9999">
+                                        <input id="phone" name="phone" class="form-control" <input value="<?= $client['phone'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="email">E-mail </label>
-                                        <input id="email" name="email" class="form-control" placeholder="ex.: email@email.com">
+                                        <input id="email" name="email" class="form-control" <input value="<?= $client['email'] ?>" disabled/>
                                     </div>
 
 
                                     <div class="col-lg-8 form-group">
                                         <label for="street">Rua </label>
-                                        <input id="street" name="street" class="form-control" placeholder="ex.: Avenida Brasil">
+                                        <input id="street" name="street" class="form-control" <input value="<?= $client['street'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-2 form-group">
                                         <label for="number">N° </label>
-                                        <input id="number" name="number" class="form-control" placeholder="ex.: 42">
+                                        <input id="number" name="number" class="form-control" <input value="<?= $client['number'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-2 form-group">
                                         <label for="others">Complemento </label>
-                                        <input id="others" name="others" class="form-control" placeholder="ex.: ap 102">
+                                        <input id="others" name="others" class="form-control" <input value="<?= $client['others'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="neighborhood">Bairro </label>
-                                        <input id="neighborhood" name="neighborhood" class="form-control" placeholder="ex.: Centro">
+                                        <input id="neighborhood" name="neighborhood" class="form-control" value="<?= $client['neighborhood'] ?>" disabled/>
                                     </div>
                                     
                                     <div class="col-lg-6 form-group">
                                         <label for="postalCode">CEP</label>
-                                        <input id="postalCode" name="postalCode" class="form-control" placeholder="ex.: 99999-999">
+                                        <input id="postalCode" name="postalCode" class="form-control" value="<?= $client['postal_code'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-8 form-group">
                                         <label for="city">Cidade </label>
-                                        <input id="city" name="city" class="form-control" placeholder="ex.: Porto Alegre">
+                                        <input id="city" name="city" class="form-control" value="<?= $client['city'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-2 form-group">
                                         <label for="state">UF </label>
-                                        <input id="state" name="state" class="form-control" placeholder="ex.: Rio Grande Do Sul">
+                                        <input id="state" name="state" class="form-control" value="<?= $client['state'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-2">
                                         <label for="country">País </label>
-                                        <input id="country" name="country" class="form-control" placeholder="ex.: Brasil">
+                                        <input id="country" name="country" class="form-control" value="<?= $client['country'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-12 form-group">
@@ -118,33 +137,36 @@
 
                                     <div class="col-lg-6 form-group">
                                         <label for="responsibleName">Nome </label>
-                                        <input id="responsibleName" name="responsibleName" class="form-control" placeholder="ex.: Maria">
+                                        <input id="responsibleName" name="responsibleName" class="form-control" value="<?= $client['responsible_name'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="responsibleSurname">Sobrenome </label>
-                                        <input id="responsibleSurname" name="responsibleSurname" class="form-control" placeholder="ex.: Pereira">
+                                        <input id="responsibleSurname" name="responsibleSurname" class="form-control" value="<?= $client['responsible_surname'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="responsiblePhone">Telefone </label>
-                                        <input id="responsiblePhone" name="responsiblePhone" class="form-control" placeholder="ex.: (99)99999-9999">
+                                        <input id="responsiblePhone" name="responsiblePhone" class="form-control" value="<?= $client['responsible_phone'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-6 form-group">
                                         <label for="responsibleEmail">E-mail </label>
-                                        <input id="responsibleEmail" name="responsibleEmail" class="form-control" placeholder="ex.: email@email.com">
+                                        <input id="responsibleEmail" name="responsibleEmail" class="form-control" value="<?= $client['responsible_email'] ?>" disabled/>
                                     </div>
 
                                     <div class="col-lg-8">
-                                        <button class="btn btn-outline btn-primary" type="submit">Cadastrar</button>
+                                       <a href="editClient.php?id=<?= $clientId ?>"><i class="glyphicon glyphicon-pencil"></i> Edit</a> 
                                     </div>
-                                </form>
+                                </div>
+                            <!-- </form> -->
                         </div>
                     </div>
-                </div>
+
                 <!-- Notifications Panel -->
-                <?php include 'notifications.php'?>
+                <?php include 'notifications.php';?>
+
+                </div>
             </div>
         </div>
         

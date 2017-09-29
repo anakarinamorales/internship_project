@@ -10,7 +10,7 @@
 			$query = $conn->prepare($sql);
 			$query->execute();
 			$query->setFetchMode($conn::FETCH_CLASS, 'User');
-			$Users = $query->fetchAll();
+			$users = $query->fetchAll();
 
 			return $users;
 		}
@@ -31,6 +31,21 @@
 			$user->setId($conn->lastInsertId());
 
 			return $user;
+		}
+
+		function deleteUser(int $userId) {
+			require("db.php");
+			require_once("../../src/models/User.php");
+
+			$sql = "DELETE FROM users WHERE id = :userId;";
+			$query = $conn->prepare($sql);
+			// var_dump($userId);exit;
+			$query->bindParam(':userId', $userId, $conn::PARAM_INT);
+			$query->execute();
+			$countDel = $query->rowCount();
+			//var_dump($countDel);exit;
+			return $countDel;
+
 		}
 	}
 ?>

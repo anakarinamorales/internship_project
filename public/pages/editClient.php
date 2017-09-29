@@ -16,7 +16,8 @@ $clientController = new ClientController();
 //pega as informações do cliente
 $client = $clientController->getClientById($clientId);
 
-//var_dump($client['first_name']);exit;
+// var_dump($client['id']);exit;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,7 +73,10 @@ $client = $clientController->getClientById($clientId);
                             <i class="glyphicon glyphicon-pencil"></i>Editar Cliente
                         </div>
                         <div class="panel-body">
-                                <form role="form" method="POST" action="../../src/controller/newClient.php">
+                                <form role="form" method="POST" action="../../src/views/editClient.php">
+
+                                    <input id="id" name="id" class="form-control" type="hidden" value="<?= $client['id'] ?>" />
+
                                     <div class="col-lg-6 form-group">
                                         <label for="name">Nome</label>
                                         <input id="name" name="name" class="form-control" value="<?= $client['first_name'] ?>" />
@@ -159,7 +163,7 @@ $client = $clientController->getClientById($clientId);
                                     </div>
 
                                     <div class="col-lg-8">
-                                        <button class="btn btn-outline btn-primary" type="submit">Cadastrar</button>
+                                        <button class="btn btn-outline btn-primary" type="submit">Atualizar</button>
                                     </div>
                                 </form>
                         </div>
