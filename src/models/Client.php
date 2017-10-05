@@ -34,7 +34,7 @@ class Client
 
     public function setFirstName(string $firstName)
     {
-        $this->first_name = $firstName;
+        $this->firstName = $firstName;
     }
 
     public function getSurname()

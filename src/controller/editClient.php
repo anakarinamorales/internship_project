@@ -1,27 +1,30 @@
 <?php
-	require_once("../controller/db.php");
-	require_once("../models/Client.php");
-	require_once("../models/Address.php");
-	require_once("../models/Responsible.php");
-	
-	require_once("../controller/addresses.php");
-	$addressController = new AddressController();
-	
-	require_once("../controller/responsibles.php");
-	$responsibleController = new ResponsibleController();
-	
-	require_once("../controller/clients.php");
-	$clientController = new ClientController();
+	require_once("db.php");
 
-	$id = $_POST['id'];
-	var_dump($id);exit;
-	
 	$host = getallheaders()['Host'];
 	session_start();
 
+	//controller do endereço
+	require_once("../models/Address.php");
+	require_once("addresses.php");
+	$addressController = new AddressController();
+	
+	//controller do responsável
+	require_once("../models/Responsible.php");
+	require_once("responsibles.php");
+	$responsibleController = new ResponsibleController();
+	
+	//controller do cliente
+	require_once("../models/Client.php");
+	require_once("clients.php");
+	$clientController = new ClientController();
+
+	//id do cliente vindo do form
+	$id = $_POST['id'];
+
 	//Variáveis
 	$client = new Client();
-	$client->setFirstName($_POST['name']);
+	$client->setFirstName($_POST['firstName']);
 	$client->setSurname($_POST['surname']);
 	$client->setPhone($_POST['phone']);
 	
@@ -34,20 +37,26 @@
 	$address->setState($_POST['state']);
 	$address->setCountry($_POST['country']);
 	$address->setPostalCode($_POST['postalCode']);
-	$addressController->insert($address);
+
+
+	$addressId = $address->getId();
+	print_r($addressId);exit;
+	// $addressUpdateCount = $address->update($address, $addressId);
+	// print_r($addressUpdateCount);
 	
 	$responsible = new Responsible();
 	$responsible->setFirstName($_POST['responsibleName']);
 	$responsible->setSurname($_POST['responsibleSurname']);
 	$responsible->setPhone($_POST['responsiblePhone']);
 	$responsible->setEmail($_POST['responsibleEmail']);
-	$responsibleController->insert($responsible);
+	$responsibleId = $responsible->getId();
+	$responsibleUpdateCount = $responsibleController->update($responsible, $responsibleId);
+	// print_r($responsibleId);exit;
 	
 	$client->setAddress($address);
 	$client->setResponsible($responsible);
 	
 	$updateCount = $clientController->updateClient($client, $id);
-	//var_dump($count);exit;
 	
 	if ($updateCount==0) {
 		header("Location: http://".$host."/public/pages/newClient.php?msg=Erro ao salvar as alterações!");

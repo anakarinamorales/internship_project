@@ -18,5 +18,22 @@
 			
 			return $responsible;
 		}
+
+		function update(Responsible $responsible, int $responsibleId){
+			require("db.php");
+			require_once("../models/Responsible.php");
+
+			$sql = "UPDATE responsibles SET responsible_name = :name , responsible_surname = :surname, responsible_phone = :phone, responsible_email = :email WHERE id = :responsibleId;";
+			$query = $conn->prepare($sql);
+			$query->bindValue(':name', $responsible->getFirstName(), $conn::PARAM_STR);
+			$query->bindValue(':surname', $responsible->getSurname(), $conn::PARAM_STR);
+			$query->bindValue(':phone', $responsible->getPhone(), $conn::PARAM_STR);
+			$query->bindValue(':email', $responsible->getEmail(), $conn::PARAM_STR);
+			$query->bindParam(':responsibleId', $responsibleId, $conn::PARAM_INT);
+			$query->execute();
+			$countUpdate = $query->rowCount();
+
+			return $countUpdate;
+		}
 	}
 ?>

@@ -73,13 +73,13 @@ $client = $clientController->getClientById($clientId);
                             <i class="glyphicon glyphicon-pencil"></i>Editar Cliente
                         </div>
                         <div class="panel-body">
-                                <form role="form" method="POST" action="../../src/views/editClient.php">
-
+                                <form role="form" method="POST" action="../../src/controller/editClient.php">
+ 
                                     <input id="id" name="id" class="form-control" type="hidden" value="<?= $client['id'] ?>" />
 
                                     <div class="col-lg-6 form-group">
-                                        <label for="name">Nome</label>
-                                        <input id="name" name="name" class="form-control" value="<?= $client['first_name'] ?>" />
+                                        <label for="firstName">Nome</label>
+                                        <input id="firstName" name="firstName" class="form-control" value="<?= $client['first_name'] ?>" />
                                     </div>
 
                                     <div class="col-lg-6 form-group">

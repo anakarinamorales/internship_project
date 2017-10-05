@@ -50,17 +50,15 @@
 			require("db.php");
 			require_once("../../src/models/Client.php");
 
-			$id = $client->getId();
-			var_dump($id);exit;
 			$sql = "UPDATE clients SET first_name = :name , surname = :surname, phone = :phone, email = :email, address = :address, responsible = :responsible WHERE id = :clientId;";
 			$query = $conn->prepare($sql);
 			$query->bindValue(':name', $client->getFirstName(), $conn::PARAM_STR);
 			$query->bindValue(':surname', $client->getSurname(), $conn::PARAM_STR);
 			$query->bindValue(':phone', $client->getPhone(), $conn::PARAM_STR);
 			$query->bindValue(':email', $client->getEmail(), $conn::PARAM_STR);
-			$query->bindValue(':address', $client->getAddress(), $conn::PARAM_INT);
-			$query->bindValue(':responsible', $client->getResponsible(), $conn::PARAM_INT);
-			$query->bindValue(':clientId', $client->getId(), $conn::PARAM_INT);
+			$query->bindValue(':address', $client->getAddress()->getId(), $conn::PARAM_STR);
+			$query->bindValue(':responsible', $client->getResponsible()->getId(), $conn::PARAM_STR);
+			$query->bindParam(':clientId', $clientId, $conn::PARAM_INT);
 			$query->execute();
 			$countUpdate = $query->rowCount();
 
