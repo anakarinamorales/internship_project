@@ -28,6 +28,7 @@
 			require_once("../models/Address.php");
 
 			$sql = "UPDATE addresses SET street = :street, number = :number, others = :others, neighborhood = :neighborhood, city = :city, state = :state, country = :country, postal_code = :postal_code, updated_at = :updated_at WHERE id = :addressId";
+			print_r($sql);exit;
 			$query = $conn->prepare($sql);
 			$query->bindValue(':street',$address->getStreet(), $conn::PARAM_STR);
 			$query->bindValue(':number',$address->getNumber(), $conn::PARAM_STR);

@@ -27,36 +27,36 @@
 	$client->setFirstName($_POST['firstName']);
 	$client->setSurname($_POST['surname']);
 	$client->setPhone($_POST['phone']);
+
 	
-	$address = new Address();
-	$address->setStreet($_POST['street']);
-	$address->setNumber($_POST['number']);
-	$address->setOthers($_POST['others']);
-	$address->setNeighborhood($_POST['neighborhood']);
-	$address->setCity($_POST['city']);
-	$address->setState($_POST['state']);
-	$address->setCountry($_POST['country']);
-	$address->setPostalCode($_POST['postalCode']);
+	// $address = new Address();
+	// $address->setStreet($_POST['street']);
+	// $address->setNumber($_POST['number']);
+	// $address->setOthers($_POST['others']);
+	// $address->setNeighborhood($_POST['neighborhood']);
+	// $address->setCity($_POST['city']);
+	// $address->setState($_POST['state']);
+	// $address->setCountry($_POST['country']);
+	// $address->setPostalCode($_POST['postalCode']);
 
-
-	$addressId = $address->getId();
-	print_r($addressId);exit;
+	// $addressId = $address->getId();
+	// print_r($addressId);exit;
 	// $addressUpdateCount = $address->update($address, $addressId);
 	// print_r($addressUpdateCount);
 	
-	$responsible = new Responsible();
-	$responsible->setFirstName($_POST['responsibleName']);
-	$responsible->setSurname($_POST['responsibleSurname']);
-	$responsible->setPhone($_POST['responsiblePhone']);
-	$responsible->setEmail($_POST['responsibleEmail']);
-	$responsibleId = $responsible->getId();
-	$responsibleUpdateCount = $responsibleController->update($responsible, $responsibleId);
+	// $responsible = new Responsible();
+	// $responsible->setFirstName($_POST['responsibleName']);
+	// $responsible->setSurname($_POST['responsibleSurname']);
+	// $responsible->setPhone($_POST['responsiblePhone']);
+	// $responsible->setEmail($_POST['responsibleEmail']);
+	// $responsibleId = $responsible->getId();
+	// $responsibleUpdateCount = $responsibleController->update($responsible, $responsibleId);
 	// print_r($responsibleId);exit;
 	
-	$client->setAddress($address);
-	$client->setResponsible($responsible);
+	// $client->setAddress($address);
+	// $client->setResponsible($responsible);
 	
-	$updateCount = $clientController->updateClient($client, $id);
+	// $updateCount = $clientController->updateClient($client, $id);
 	
 	if ($updateCount==0) {
 		header("Location: http://".$host."/public/pages/newClient.php?msg=Erro ao salvar as alterações!");
