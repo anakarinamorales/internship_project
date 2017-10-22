@@ -29,7 +29,7 @@
 			$query->bindValue(':surname', $responsible->getSurname(), $conn::PARAM_STR);
 			$query->bindValue(':phone', $responsible->getPhone(), $conn::PARAM_STR);
 			$query->bindValue(':email', $responsible->getEmail(), $conn::PARAM_STR);
-			$query->bindParam(':responsibleId', $responsible->getId(), $conn::PARAM_INT);
+			$query->bindValue(':responsibleId', $responsible->getId(), $conn::PARAM_INT);
 			$query->execute();
 			$countUpdate = $query->rowCount();
 

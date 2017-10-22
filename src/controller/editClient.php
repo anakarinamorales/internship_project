@@ -44,16 +44,13 @@
 	$responsible->setPhone($_POST['responsiblePhone']);
 	$responsible->setEmail($_POST['responsibleEmail']);
 
-	$client->setAddress($address->getId());
-	$client->setResponsible($responsible->getId());
-	
-	$updateCount = $clientController->updateClient($client);
 	$responsibleUpdateCount = $responsibleController->update($responsible);
-	$addressUpdateCount = $address->update($address);
+	$addressUpdateCount = $addressController->update($address);
+	$clientUpdateCount = $clientController->update($client);
 	
-	if ($updateCount == 0) {
-		header("Location: http://".$host."/public/pages/newClient.php?msg=Erro ao salvar as alterações!");
-	} else {
+	if ($clientUpdateCount + $responsibleUpdateCount + $addressUpdateCount == 3) {
 		header("Location: http://".$host."/public/pages/clients.php?msg=Cliente editado com sucesso!");
+	} else {
+		header("Location: http://".$host."/public/pages/newClient.php?msg=Erro ao salvar as alterações!");
 	}
 ?>

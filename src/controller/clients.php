@@ -46,36 +46,32 @@
 			return $client;
 		}
 
-		function updateClient(Client $client, int $clientId) {
+		function update(Client $client) {
 			require("db.php");
 			require_once("../../src/models/Client.php");
 
-			$sql = "UPDATE clients SET first_name = :name , surname = :surname, phone = :phone, email = :email, address = :address, responsible = :responsible WHERE id = :clientId;";
+			$sql = "UPDATE clients SET first_name = :name , surname = :surname, phone = :phone, email = :email WHERE id = :clientId;";
 			$query = $conn->prepare($sql);
 			$query->bindValue(':name', $client->getFirstName(), $conn::PARAM_STR);
 			$query->bindValue(':surname', $client->getSurname(), $conn::PARAM_STR);
 			$query->bindValue(':phone', $client->getPhone(), $conn::PARAM_STR);
 			$query->bindValue(':email', $client->getEmail(), $conn::PARAM_STR);
-			$query->bindValue(':address', $client->getAddress()->getId(), $conn::PARAM_STR);
-			$query->bindValue(':responsible', $client->getResponsible()->getId(), $conn::PARAM_STR);
-			$query->bindParam(':clientId', $clientId, $conn::PARAM_INT);
+			$query->bindValue(':clientId', $client->getId(), $conn::PARAM_INT);
 			$query->execute();
 			$countUpdate = $query->rowCount();
 
 			return $countUpdate;
 		}
 		
-		function deleteClient(int $clientId) {
+		function delete(int $clientId) {
 			require("db.php");
 			require_once("../../src/models/Client.php");
 
 			$sql = "DELETE FROM clients WHERE id = :clientId;";
 			$query = $conn->prepare($sql);
-			// var_dump($clientId);exit;
 			$query->bindParam(':clientId', $clientId, $conn::PARAM_INT);
 			$query->execute();
 			$countDel = $query->rowCount();
-			//var_dump($countDel);exit;
 			return $countDel;
 		}
 
