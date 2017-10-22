@@ -1,3 +1,3 @@
 <?php
 
-$conn = new PDO('mysql:host=localhost;dbname=projeto_estagio', 'projetoestagio', 'projetoestagio');
+$conn = new PDO('mysql:host=localhost;dbname=projeto_estagio', 'root', '123');

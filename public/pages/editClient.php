@@ -87,7 +87,7 @@ $client = $clientController->getClientById($clientId);
                                 <input id="email" name="email" class="form-control" <input value="<?= $client['email'] ?>" />
                             </div>
 
-                            <input id="id" name="id" class="form-control" type="hidden" value="<?= $client['address'] ?>" />
+                            <input id="addressId" name="addressId" class="form-control" type="hidden" value="<?= $client['address'] ?>" />
 
                             <div class="col-lg-8 form-group">
                                 <label for="street">Rua </label>
@@ -133,7 +133,7 @@ $client = $clientController->getClientById($clientId);
                                 <label><p class="form-control-static">Dados do Responsável</p></label>
                             </div>
 
-                            <input id="id" name="id" class="form-control" type="hidden" value="<?= $client['responsible'] ?>" />
+                            <input id="responsibleId" name="responsibleId" class="form-control" type="hidden" value="<?= $client['responsible'] ?>" />
 
                             <div class="col-lg-6 form-group">
                                 <label for="responsibleName">Nome </label>
