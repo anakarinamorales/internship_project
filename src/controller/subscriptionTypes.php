@@ -1,6 +1,6 @@
 <?php
 	class SubscriptionTypeController {
-		function getAllSubscriptionTypes() {
+		function getAll() {
 			require("db.php");
 			require_once("../../src/models/SubscriptionType.php");
 
@@ -13,7 +13,7 @@
 			return $subscriptionTypes;
 		}
 
-		function getSubscriptionTypeById(int $id) {
+		function getById(int $id) {
 			require("db.php");
 			require_once("../../src/models/SubscriptionType.php");
 

@@ -1,6 +1,6 @@
 <?php
 	class ServiceSubscriptionTypesController {
-		function getServiceSubscriptionTypes(int $serviceId){
+		function getById(int $serviceId){
 			//conexão com o banco
 			require("db.php");
 			require_once("../../src/models/SubscriptionType.php");

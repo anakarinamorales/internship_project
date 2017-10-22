@@ -13,7 +13,7 @@ class CreateServicesSubscriptionTypes extends AbstractMigration
 {
     public function up()
     {
-        $this->table('services_subscription_types')
+        $this->table('services_subscription_types', ['id' => false, 'primary_key' => ['service', 'subscription_type']])
             //Colunas
             ->addColumn('service', 'integer')
             ->addColumn('subscription_type', 'integer')

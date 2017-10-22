@@ -33,7 +33,6 @@ for ($i=0; $i < sizeof($services); $i++) {
                     <table class="table table-striped  table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Plano (Período)</th>
                                 <th>Desconto (%)</th>
                                 <th>Valor (R$)</th>
@@ -42,29 +41,30 @@ for ($i=0; $i < sizeof($services); $i++) {
 					
 						<tbody>
 							<?php
-								$serviceId = $service->getId();
-								$serviceSubscriptionTypes = $serviceSubscriptionTypesController->getServiceSubscriptionTypes($serviceId);
+								$serviceSubscriptionTypes = $serviceSubscriptionTypesController->getById($service->getId());
 
-								for ($x=0; $x<sizeof($serviceSubscriptionTypes)-1; $x++) {
+                                for ($x=0; $x<sizeof($serviceSubscriptionTypes)-1; $x++) {
+                                    $subscriptionTypeId = $serviceSubscriptionTypes[$x];
+                                    $subscriptionType = $subscriptionTypeController->getById($subscriptionTypeId);
 									$evenOdd = $x%2==0 ? 'even' : 'odd';
 
                                     echo('<tr class="'.$evenOdd.' gradeX">');
-                                        echo('<td>'.$serviceSubscriptionTypes->getDescription().'</td>');
-                                        echo('<td>'.$serviceSubscriptionTypes->getDiscount().'</td>');
-                                        
-                                        $discount = $serviceSubscriptionTypes->getDiscount();
-                                        $discount = $discount/100;
-                                        $serviceValue = $service->getValue();
-                                        $discount = $discount * $serviceValue;
-                                        $total = $serviceValue - $discount;
+                                    echo('<td>'.$subscriptionType->getDescription().'</td>');
+                                    echo('<td>'.$subscriptionType->getDiscount().'</td>');
+                                    
+                                    $discount = $subscriptionType->getDiscount();
+                                    $discount = $discount/100;
+                                    $serviceValue = $service->getValue();
+                                    $discount = $discount * $serviceValue;
+                                    $total = $serviceValue - $discount;
 
-                                        /* Formata a exibição do valor para duas casas decimais, arredondando os valores*/
-                                        // $total = number_format($total, 2, '.', '');
+                                    /* Formata a exibição do valor para duas casas decimais, arredondando os valores*/
+                                    // $total = number_format($total, 2, '.', '');
 
-                                        /* Formata a exibição do valor para até duas casas decimais, sem arredondamento */
-                                        $total = substr($total, 0, strrpos($total, '.')+3);
+                                    /* Formata a exibição do valor para até duas casas decimais, sem arredondamento */
+                                    $total = substr($total, 0, strrpos($total, '.')+3);
 
-                                        echo('<td>'.str_replace('.', ',', $total).'</td>');
+                                    echo('<td>'.str_replace('.', ',', $total).'</td>');
                                     echo('</tr>');
 								}			
 							?>
