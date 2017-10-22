@@ -19,7 +19,7 @@
 			return $responsible;
 		}
 
-		function update(Responsible $responsible, int $responsibleId){
+		function update(Responsible $responsible){
 			require("db.php");
 			require_once("../models/Responsible.php");
 
@@ -29,7 +29,7 @@
 			$query->bindValue(':surname', $responsible->getSurname(), $conn::PARAM_STR);
 			$query->bindValue(':phone', $responsible->getPhone(), $conn::PARAM_STR);
 			$query->bindValue(':email', $responsible->getEmail(), $conn::PARAM_STR);
-			$query->bindParam(':responsibleId', $responsibleId, $conn::PARAM_INT);
+			$query->bindParam(':responsibleId', $responsible->getId(), $conn::PARAM_INT);
 			$query->execute();
 			$countUpdate = $query->rowCount();
 

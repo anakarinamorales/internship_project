@@ -23,7 +23,7 @@
 			return $address;
 		}
 
-		function update(Address $address, int $addressId) {
+		function update(Address $address) {
 			require("db.php");
 			require_once("../models/Address.php");
 
@@ -38,7 +38,7 @@
 			$query->bindValue(':state',$address->getState(), $conn::PARAM_STR);
 			$query->bindValue(':country',$address->getCountry(), $conn::PARAM_STR);
 			$query->bindValue(':postal_code',$address->getPostalCode(), $conn::PARAM_STR);
-			$query->bindParam(':addressId', $addressId, $conn::PARAM_INT);
+			$query->bindParam(':addressId', $address->getId(), $conn::PARAM_INT);
 			$query->execute();
 			$countUpdate = $query->rowCount();
 
