@@ -30,9 +30,9 @@ class Responsible
 		return $this->firstName;
 	}
 
-	public function setFirstName(string $name)
+	public function setFirstName(string $firstName)
 	{
-		$this->name = $name;
+		$this->firstName = $firstName;
 	}
 
 	public function getSurname()

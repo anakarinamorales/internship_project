@@ -10,7 +10,7 @@
 class Client
 {
     private $id;
-    private $firstName;
+    private $first_name;
     private $surname;
     private $phone;
     private $email;
@@ -29,12 +29,12 @@ class Client
 
     public function getFirstName()
     {
-        return $this->firstName;
+        return $this->first_name;
     }
 
     public function setFirstName(string $firstName)
     {
-        $this->firstName = $firstName;
+        $this->first_name = $firstName;
     }
 
     public function getSurname()

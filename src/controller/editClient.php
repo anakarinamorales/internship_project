@@ -25,6 +25,7 @@
 	$client->setFirstName($_POST['firstName']);
 	$client->setSurname($_POST['surname']);
 	$client->setPhone($_POST['phone']);
+	$client->setEmail($_POST['email']);
 
 	$address = new Address();
 	$address->setId($_POST['addressId']);
@@ -46,6 +47,7 @@
 
 	$responsibleUpdateCount = $responsibleController->update($responsible);
 	$addressUpdateCount = $addressController->update($address);
+
 	$clientUpdateCount = $clientController->update($client);
 	
 	if ($clientUpdateCount + $responsibleUpdateCount + $addressUpdateCount == 3) {

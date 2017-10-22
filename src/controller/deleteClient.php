@@ -14,9 +14,7 @@ $clientController = new ClientController();
 $host = getallheaders()['Host'];
 session_start();
 
-$countDel = $clientController->deleteClient($clientId);
-
-//var_dump($countDel);
+$countDel = $clientController->delete($clientId);
 
 if ($countDel==0) {
 	header("Location: http://".$host."/public/pages/clients.php?msg=Erro ao excluir cliente!");

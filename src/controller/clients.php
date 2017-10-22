@@ -50,13 +50,14 @@
 			require("db.php");
 			require_once("../../src/models/Client.php");
 
-			$sql = "UPDATE clients SET first_name = :name , surname = :surname, phone = :phone, email = :email WHERE id = :clientId;";
+			$sql = "UPDATE clients SET first_name = :name , surname = :surname, phone = :phone, email = :email WHERE id = :id;";
+			
 			$query = $conn->prepare($sql);
 			$query->bindValue(':name', $client->getFirstName(), $conn::PARAM_STR);
 			$query->bindValue(':surname', $client->getSurname(), $conn::PARAM_STR);
 			$query->bindValue(':phone', $client->getPhone(), $conn::PARAM_STR);
 			$query->bindValue(':email', $client->getEmail(), $conn::PARAM_STR);
-			$query->bindValue(':clientId', $client->getId(), $conn::PARAM_INT);
+			$query->bindValue(':id', $client->getId(), $conn::PARAM_INT);
 			$query->execute();
 			$countUpdate = $query->rowCount();
 
@@ -67,11 +68,13 @@
 			require("db.php");
 			require_once("../../src/models/Client.php");
 
-			$sql = "DELETE FROM clients WHERE id = :clientId;";
+			$sql = "DELETE FROM clients WHERE id = :id;";
 			$query = $conn->prepare($sql);
-			$query->bindParam(':clientId', $clientId, $conn::PARAM_INT);
+			$query->bindParam(':id', $clientId, $conn::PARAM_INT);
 			$query->execute();
+
 			$countDel = $query->rowCount();
+
 			return $countDel;
 		}
 
