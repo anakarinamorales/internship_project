@@ -26,12 +26,15 @@ for ($i=0; $i < sizeof($services); $i++) {
     $service = $services[$i];
     $serviceSubscriptionTypes = $serviceSubscriptionTypesController->getByServiceId($service->getId());
     $clientServices = $serviceClientController->getByClientId($clientId);
+    $clientServicesWithServiceAsIndex = array();
 
-    $servicosCliente = array();
-
-    //Cria um array associando SERVICE_ID=>SUBSCRIPTION_TYPE_ID para depois comparar os serviços que o cliente já tem
+    //Cria um array associando SERVICE_ID=>SUBSCRIPTION_TYPE_ID (ou seja, usando o id do serviço como index)
+    //para depois comparar os serviços que o cliente já tem
     for ($s=0;$s<sizeof($clientServices);$s++) {
-        $servicosCliente[$clientServices[$s]->getService()] = $clientServices[$s]->getSubscriptionType();
+        $clientServicesWithServiceAsIndex[$clientServices[$s]->getService()] = array(
+            'id' => $clientServices[$s]->getId(),
+            'subscriptionType' => $clientServices[$s]->getSubscriptionType()
+        );
     }
 
     //Lista apenas os serviços que tem pelo menos um tipo de inscrição
@@ -56,7 +59,7 @@ for ($i=0; $i < sizeof($services); $i++) {
                                 <th>Plano (Período)</th>
                                 <th>Desconto (%)</th>
                                 <th>Valor (R$)</th>
-                                <th>Contratar</th>
+                                <th>Alterar</th>
                             </tr>
                         </thead>
 					
@@ -85,11 +88,25 @@ for ($i=0; $i < sizeof($services); $i++) {
 
                                     echo('<td>'.str_replace('.', ',', $total).'</td>');
 
-                                    $clientHasService = $servicosCliente[$service->getId()] == $subscriptionTypeId;
+                                    $clientHasContract = $clientServicesWithServiceAsIndex[$service->getId()]['subscriptionType'] == $subscriptionTypeId;
 
-                                    echo('<td style="padding: 0;">
-                                        <button href="#" class="btn btn-primary btn-block" style="border-radius: 0; font-size: 24px; line-height: 22px;" '.($clientHasService ? "disabled" : "").'>+</button>
-                                    </td>');
+                                    if ($clientHasContract) {
+                                        echo('<td style="padding: 0;">
+                                            <form action="../../src/controller/unsubscribeService.php" method="POST">
+                                            <input type="hidden" name="serviceClientId" value="'.$clientServicesWithServiceAsIndex[$service->getId()]['id'].'"/>
+                                                <button class="btn btn-primary btn-block" style="border-radius: 0; font-size: 24px; line-height: 22px;">-</a>
+                                            </form>
+                                        </td>');
+                                    } else {
+                                        echo('<td style="padding: 0;">
+                                            <form action="../../src/controller/subscribeService.php" method="POST">
+                                                <input type="hidden" name="clientId" value="'.$clientId.'"/>
+                                                <input type="hidden" name="serviceId" value="'.$service->getId().'"/>
+                                                <input type="hidden" name="subscriptionTypeId" value="'.$subscriptionTypeId.'"/>
+                                                <button class="btn btn-primary btn-block" style="border-radius: 0; font-size: 24px; line-height: 22px;" '.($clientServicesWithServiceAsIndex[$service->getId()] ? "disabled" : "").'>+</button>
+                                            </form>
+                                        </td>');
+                                    }
 
                                     echo('</tr>');
 								}			
