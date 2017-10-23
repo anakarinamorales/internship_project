@@ -33,7 +33,7 @@
     <body>
         <div id="wrapper">
             <!-- Navigation -->
-            <?php include 'navigation.php'?>
+            <?php include 'navigation.php';?>
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
@@ -43,39 +43,13 @@
 
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="panel panel-default">
+                        <input style="display: block; width: 100%; margin-bottom: 1rem;" placeholder="Pesquisar serviços"/>
 
-                            <!-- Inserir aqui nome e id do cliente -->
-                            <div class="panel-heading">
-                            </div>
-
-                            <div class="panel-body" style="background-color:grey;">
-                                <div class="col-lg-12" style="background-color:blue;">
-                                    <div class="col-lg-10" id="pesquisarServiço">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Pesquisar serviço">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-default" type="submit">
-                                                    <span class="glyphicon glyphicon-search"></span>
-                                                </button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
-                                </div>     
-                                <div style="background-color:orange;" id="listarServiços">
-                                    <a href="#">Listar todos os serviços</a>
-                                </div>
-
-                                <div style="background-color:green">
-                                    <Pphp include 'serviceSearch.php'?>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'serviceTablesClient.php';?>
                     </div>
 
                     <!-- Notifications Panel -->
-                    <?php include 'notifications.php'?>
+                    <?php include 'notifications.php';?>
                 </div>
             </div>
 

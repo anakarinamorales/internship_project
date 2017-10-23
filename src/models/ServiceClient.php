@@ -10,11 +10,11 @@
 class ServiceClient
 {
 	private $id;
-	private $subscriptionDate;
+	private $subscription_date;
 	private $client;
 	private $service;
-	private $subscriptionType;
-	private $paymentMethod;
+	private $subscription_type;
+	private $payment_method;
 
 	public function getId()
 	{
@@ -28,12 +28,12 @@ class ServiceClient
 
 	public function getSubscriptionDate()
 	{
-		return $this->subscriptionDate;
+		return $this->subscription_date;
 	}
 
 	public function setSubscriptionDate(date $subscriptionDate)
 	{
-		$this->subscriptionDate = $subscriptionDate;
+		$this->subscription_date = $subscriptionDate;
 	}
 
 	public function getClient()
@@ -58,21 +58,21 @@ class ServiceClient
 
 	public function getSubscriptionType()
 	{
-		return $this->subscriptionType;
+		return $this->subscription_type;
 	}
 
 	public function setSubscriptionType(SubscriptionType $subscriptionType)
 	{
-		$this->subscriptionType = $subscriptionType;
+		$this->subscription_type = $subscriptionType;
 	}
 
 	public function getPaymentMethod()
 	{
-		return $this->paymentMethod;
+		return $this->payment_method;
 	}
 
 	public function setPaymentMethod(PaymentMethod $paymentMethod)
 	{
-		$this->paymentMethod = $paymentMethod;
+		$this->payment_method = $paymentMethod;
 	}
 }

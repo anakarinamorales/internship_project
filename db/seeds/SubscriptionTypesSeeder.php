@@ -9,12 +9,12 @@ class SubscriptionTypesSeeder extends AbstractSeed
     public function run()
     {
         $faker = Faker\Factory::create();
-        $clientsList = $this->fetchAll('SELECT id FROM clients');
+        $typesList = array('Mensal', 'Semestral', 'Anual');
 
         //seeding data
-        foreach(range(0, 9) as $value) {
+        foreach(range(0, 2) as $value) {
         	$data[] = [
-				'description' => $faker->randomElement($array = array('Mensal', 'Semestral', 'Anual')),
+				'description' => $typesList[$value],
 				'discount' => $faker->numberBetween($min = 0, $max = 50),
         	];
         }

@@ -19,8 +19,8 @@ class ServicesClientsSeeder extends AbstractSeed
         	$data[] = [
 				'subscription_date' => date('Y-m-d'),
 				'client' => $clientsList[$value]['id'],
-				'service' => $servicesList[$value]['id'],
-				'subscription_type' => $subscriptionTypesList[$value]['id'],
+				'service' => $faker->numberBetween($min = 1, $max = sizeof($servicesList)),
+				'subscription_type' => $faker->numberBetween($min = 1, $max = sizeof($subscriptionTypesList)),
 				'payment_method' => $paymentMethodsList[$value]['id']
         	];
         }

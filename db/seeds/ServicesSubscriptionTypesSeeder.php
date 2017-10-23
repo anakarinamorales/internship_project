@@ -7,15 +7,14 @@ class ServicesSubscriptionTypesSeeder extends AbstractSeed
 
     public function run()
     {
-        $faker = Faker\Factory::create();
-        $servicesList = $this->fetchAll('SELECT id FROM services');
-        $subscriptionTypesList = $this->fetchAll('SELECT id FROM subscription_types');
+        $servicesOrder = array(1, 1, 1, 2, 2, 3);
+        $subscriptionOrder = array(1, 2, 3, 1, 2, 1);
 
         //seeding data
-        foreach(range(0, 9) as $value) {
+        foreach(range(0, 5) as $value) {
         	$data[] = [
-				'service' => $servicesList[$value]['id'],
-				'subscription_type' => $subscriptionTypesList[$value]['id'],
+				'service' => $servicesOrder[$value],
+				'subscription_type' => $subscriptionOrder[$value]
         	];
         }
 

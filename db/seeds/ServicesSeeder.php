@@ -9,11 +9,12 @@ class ServicesSeeder extends AbstractSeed
     public function run()
     {
         $faker = Faker\Factory::create();
+        $typesList = array('Hospedagem', 'Email', 'Hospedagem e Email');
 
         //seeding data
-        foreach(range(0, 9) as $value) {
+        foreach(range(0, 2) as $value) {
         	$data[] = [
-				'description' => $faker->randomElement($array = array('Hospedagem', 'Email', 'Hospedagem e Email')),
+				'description' => $typesList[$value],
 				'value' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 50),
         	];
         }
