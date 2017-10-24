@@ -41,10 +41,10 @@ for ($i=0; $i < sizeof($services); $i++) {
 					
 						<tbody>
 							<?php
-								$serviceSubscriptionTypes = $serviceSubscriptionTypesController->getById($service->getId());
+								$serviceSubscriptionTypes = $serviceSubscriptionTypesController->getByServiceId($service->getId());
 
-                                for ($x=0; $x<sizeof($serviceSubscriptionTypes)-1; $x++) {
-                                    $subscriptionTypeId = $serviceSubscriptionTypes[$x];
+                                for ($x=0; $x<sizeof($serviceSubscriptionTypes); $x++) {
+                                    $subscriptionTypeId = $serviceSubscriptionTypes[$x][0];
                                     $subscriptionType = $subscriptionTypeController->getById($subscriptionTypeId);
 									$evenOdd = $x%2==0 ? 'even' : 'odd';
 
