@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,9 +37,9 @@
     <body>
         <div id="wrapper">
             <!-- Navigation -->
-            <?php include 'navigation.php'?>
+            <?php include 'navigation.php';?>
 
-            <!-- CONTEÚDO -->
+            <!-- Content -->
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
@@ -47,15 +47,15 @@
                     </div>
                 </div>
 
+                <!-- Form -->
                 <div class="row">
-                    <!-- Form -->
                     <div class="col-lg-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                            <i class="fa fa-plus-circle fa-fw"></i>Novo Serviço
+                            <i class="fa fa-plus-circle fa-fw"></i> Novo Serviço
                         </div>
-                        <div class="panel-body">
-                            
+
+                        <div class="panel-body"> 
                             <form role="form" method="POST" action="../../src/controller/newService.php">
                                 <div class="col-lg-10 form-group">
                                     <label for="serviceName">Serviço </label>
@@ -67,6 +67,33 @@
                                     <input class="form-control" placeholder="350,00"  id="serviceValue" name="serviceValue">
                                 </div>
 
+                                <div class="col-lg-12">
+                                    <p>
+                                        <label> Tipos de inscrição aceitas</label>
+                                    </p>
+                                </div>
+
+                                <div class="form-check col-lg-12">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="1" id="mensalSubscription" name="mensalSubscription">
+                                            Mensal
+                                    </label>
+                                </div>
+
+                                <div class="form-check col-lg-12">
+                                    <label class="form-check-label"> 
+                                        <input class="form-check-input" type="checkbox" value="1" id="semestralSubscription" name="semestralSubscription">
+                                            Semestral
+                                    </label>
+                                </div>
+
+                                <div class="form-check col-lg-12">
+                                    <label class="form-check-label"> 
+                                        <input class="form-check-input" type="checkbox" value="1" id="anualSubscription" name="anualSubscription">
+                                            Anual
+                                    </label>
+                                </div>
+                    
                                 <div class="col-lg-6">
                                     <button type="submit" class="btn btn-outline btn-primary">
                                         Cadastrar
@@ -78,7 +105,7 @@
                 </div>
 
                 <!-- Painel de Alertas -->
-                <?php include 'notifications.php'?>
+                <?php include 'notifications.php';?>
             </div>
         </div>
 

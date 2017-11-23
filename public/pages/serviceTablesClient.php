@@ -10,7 +10,7 @@ $serviceSubscriptionTypesController = new ServiceSubscriptionTypesController();
 //controller dos planos de assinatura
 $subscriptionTypeController = new SubscriptionTypeController();
 
-//controller dos planos de assinatura
+//controller dos serviços contratados pelo cliente
 $serviceClientController = new ServiceClientController();
 
 //controller de serviços
@@ -26,10 +26,10 @@ for ($i=0; $i < sizeof($services); $i++) {
     $service = $services[$i];
     $serviceSubscriptionTypes = $serviceSubscriptionTypesController->getByServiceId($service->getId());
     $clientServices = $serviceClientController->getByClientId($clientId);
-    $clientServicesWithServiceAsIndex = array();
 
-    //Cria um array associando SERVICE_ID=>SUBSCRIPTION_TYPE_ID (ou seja, usando o id do serviço como index)
-    //para depois comparar os serviços que o cliente já tem
+    // Cria um array associando SERVICE_ID=>SUBSCRIPTION_TYPE_ID (ou seja, usando o id do serviço como index)
+    // para depois comparar os serviços que o cliente já tem
+    $clientServicesWithServiceAsIndex = array();
     for ($s=0;$s<sizeof($clientServices);$s++) {
         $clientServicesWithServiceAsIndex[$clientServices[$s]->getService()] = array(
             'id' => $clientServices[$s]->getId(),
@@ -43,7 +43,7 @@ for ($i=0; $i < sizeof($services); $i++) {
     }
 
 	?>
-
+    
     <div class="col-lg-6">
         <div class="panel panel-default">
 			<div class="panel-heading">

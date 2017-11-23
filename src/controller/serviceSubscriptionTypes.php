@@ -15,5 +15,20 @@
 
 			return $serviceSubscriptionType;
 		}
+
+		function insert (int $serviceId, int $subscriptionId){
+			//conexão com o banco
+			require("db.php");
+			require_once("../../src/models/SubscriptionType.php");
+
+			$sql = "INSERT INTO services_subscription_types (service, subscription_type) VALUES (:serviceId, :subscriptionId);";
+
+			$query = $conn->prepare($sql);
+			$query->bindParam(':serviceId', $serviceId, $conn::PARAM_INT);
+			$query->bindParam(':subscriptionId', $subscriptionId, $conn::PARAM_INT);
+			$insert = $query->execute();
+
+			return $insert;
+		}
 	}
 ?>
