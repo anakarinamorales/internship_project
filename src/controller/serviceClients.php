@@ -1,6 +1,6 @@
 <?php
 	class ServiceClientController {
-		function getByClientId(int $clientId) {
+		function getByClientId($clientId) {
 			require("db.php");
 			require_once("../../src/models/ServiceClient.php");
 
@@ -28,15 +28,16 @@
 			return $countDel;
 		}
 
-		function insert (int $clientId, int $serviceId, int $subcriptionTypeId){
+		function insert (int $clientId, int $serviceId, int $subcriptionTypeId, int $paymentMethod){
 			require("db.php");
 			require_once("../../src/models/ServiceClient.php");
 
-			$sql = "INSERT INTO clients (subscription_date, client, service, subscription_type, payment_method) VALUES (NOW(), :clientId, :serviceId, :subcriptionTypeId);";
+			$sql = "INSERT INTO services_clients (subscription_date, client, service, subscription_type, payment_method) VALUES (NOW(), :clientId, :serviceId, :subcriptionTypeId, :paymentMethod);";
 			$query = $conn->prepare($sql);
 			$query->bindParam(':clientId', $clientId, $conn::PARAM_INT);
 			$query->bindParam(':serviceId', $serviceId, $conn::PARAM_INT);
 			$query->bindParam(':subcriptionTypeId', $subcriptionTypeId, $conn::PARAM_INT);
+			$query->bindParam(':paymentMethod', $paymentMethod, $conn::PARAM_INT);
 			$query->execute();
 
 			$countDel = $query->rowCount();

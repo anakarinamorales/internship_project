@@ -9,8 +9,6 @@ $clientId = (int)$_POST['clientId'];
 
 $serviceClient = new ServiceClientController();
 
-// var_dump($clientId);
-// print_r($clientId);
 $try = $serviceClient->delete($serviceClientId);
 
 if ($try==0) {
