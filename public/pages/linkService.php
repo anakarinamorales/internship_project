@@ -43,8 +43,6 @@
 
                 <div class="row">
                     <div class="col-lg-8">
-                        <input style="display: block; width: 100%; margin-bottom: 1rem;" placeholder="Pesquisar serviços"/>
-
                         <?php include 'serviceTablesClient.php';?>
                     </div>
 

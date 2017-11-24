@@ -145,10 +145,6 @@
                         <li>
                             <a href="clients.php">Exibir</a>
                         </li>
-
-                        <li>
-                            <a href="linkService.php">Vincular serviço</a>
-                        </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
