@@ -94,7 +94,9 @@ for ($i=0; $i < sizeof($services); $i++) {
                                         echo('<td style="padding: 0;">
                                             <form action="../../src/controller/unsubscribeService.php" method="POST">
                                             <input type="hidden" name="serviceClientId" value="'.$clientServicesWithServiceAsIndex[$service->getId()]['id'].'"/>
+                                            <input type="hidden" name="clientId" value="'.$clientId.'"/>
                                                 <button class="btn btn-primary btn-block" style="border-radius: 0; font-size: 24px; line-height: 22px;">-</a>
+
                                             </form>
                                         </td>');
                                     } else {

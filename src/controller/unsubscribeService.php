@@ -5,6 +5,7 @@ $host = getallheaders()['Host'];
 session_start();
 
 $serviceClientId = (int)$_POST['serviceClientId'];
+$clientId = (int)$_POST['clientId'];
 
 $serviceClient = new ServiceClientController();
 
@@ -14,10 +15,9 @@ $try = $serviceClient->delete($serviceClientId);
 
 if ($try==0) {
 	echo "Erro!";
-	//header("Location: http://".$host."/public/pages/linkService.php?id=".(int)$clientId);
+	header("Location: http://".$host."/public/pages/linkService.php?id=".$clientId."msg=Erro ao desvincular serviço!");
 }else{
 	echo "Certo!";
-	// include '../../public/pages/modal.php';
-	//header("Location: http://".$host."/public/pages/linkService.php?id=".(int)$clientId);
+	header("Location: http://".$host."/public/pages/linkService.php?id=".$clientId."msg=Serviço desvinculado com sucesso");
 }
 ?>

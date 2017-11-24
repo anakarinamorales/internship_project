@@ -29,7 +29,19 @@
 		}
 
 		function insert (int $clientId, int $serviceId, int $subcriptionTypeId){
+			require("db.php");
+			require_once("../../src/models/ServiceClient.php");
 
+			$sql = "INSERT INTO clients (subscription_date, client, service, subscription_type, payment_method) VALUES (NOW(), :clientId, :serviceId, :subcriptionTypeId);";
+			$query = $conn->prepare($sql);
+			$query->bindParam(':clientId', $clientId, $conn::PARAM_INT);
+			$query->bindParam(':serviceId', $serviceId, $conn::PARAM_INT);
+			$query->bindParam(':subcriptionTypeId', $subcriptionTypeId, $conn::PARAM_INT);
+			$query->execute();
+
+			$countDel = $query->rowCount();
+
+			return $countDel;
 		}
 	}
 ?>
