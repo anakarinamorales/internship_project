@@ -88,7 +88,11 @@ for ($i=0; $i < sizeof($services); $i++) {
 
                                     echo('<td>'.str_replace('.', ',', $total).'</td>');
 
-                                    $clientHasContract = $clientServicesWithServiceAsIndex[$service->getId()]['subscriptionType'] == $subscriptionTypeId;
+                                    //Verifica se o cliente tem o plano CADASTRADO
+                                    $clientService = isset($clientServicesWithServiceAsIndex[$service->getId()]) ? $clientServicesWithServiceAsIndex[$service->getId()] : false;
+
+                                    //Se o cliente tiver o plano CADASTRADO, verifica se ele está com o plano CONTRATADO
+                                    $clientHasContract = $clientService ? $clientService['subscriptionType'] == $subscriptionTypeId : false;
 
                                     if ($clientHasContract) {
                                         echo('<td style="padding: 0;">
@@ -105,7 +109,7 @@ for ($i=0; $i < sizeof($services); $i++) {
                                                 <input type="hidden" name="clientId" value="'.$clientId.'"/>
                                                 <input type="hidden" name="serviceId" value="'.$service->getId().'"/>
                                                 <input type="hidden" name="subscriptionTypeId" value="'.$subscriptionTypeId.'"/>
-                                                <button class="btn btn-primary btn-block" style="border-radius: 0; font-size: 24px; line-height: 22px;" '.($clientServicesWithServiceAsIndex[$service->getId()] ? "disabled" : "").'>+</button>
+                                                <button class="btn btn-primary btn-block" style="border-radius: 0; font-size: 24px; line-height: 22px;" '.($clientService ? "disabled" : "").'>+</button>
                                             </form>
                                         </td>');
                                     }
