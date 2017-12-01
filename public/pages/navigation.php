@@ -7,7 +7,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">13 bits Admin</a>
+        <a class="navbar-brand" href="index.php">
+            <img class="img-responsive" src="../../img/logo.png" style="height: 4vh;">
+        </a>
     </div>
     <!-- /.navbar-header -->
 

@@ -35,7 +35,7 @@
     <body>
         <div id="wrapper">
             <!-- Navigation -->
-            <?php include 'navigation.php'?>
+            <?php include 'navigation.php';?>
 
             <!-- CONTEÚDO -->
             <div id="page-wrapper">
@@ -48,11 +48,11 @@
                 <div class="row">
                     <!-- Tabela de Serviços -->
                     <div class="col-lg-8">
-                        <?php include 'serviceTables.php'?>
+                        <?php include 'serviceTables.php';?>
                     </div>
 
                     <!-- Painel de Alertas -->
-                    <?php include 'notifications.php'?>
+                    <?php include 'notifications.php';?>
                 </div>
             </div>
         </div>

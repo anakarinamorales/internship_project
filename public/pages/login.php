@@ -33,17 +33,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
-    <body>
+    <body style="background-color: #2d4373;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4" style="background-color: #2d4373;">
-                    <h1 class="login-title">13 Bits <br/> Gerenciador</h1>
+                <div class="col-md-4 col-md-offset-4">
                 
-                    <div class="login-panel panel panel-default" style="margin-top: 30%">
-                            <div class="panel-heading">
-                                <span class="glyphicon glyphicon-user"></span>
-                                <p>Login</p>
-                            </div>
+                    <div class="login-panel panel panel-default">
+                        <img class="img-responsive" src="../../img/logo.png" style="margin: auto; padding-top: 10vh;">
                             <div class="panel-body">
                                 <form role="form" action="../../src/controller/login.php" method="POST">
                                     <fieldset>

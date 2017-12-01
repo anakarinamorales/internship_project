@@ -47,7 +47,7 @@
                  <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Todos os Clientes
+                            Clientes cadastrados no sistema
                         </div>
 
                         <!-- /.panel-heading -->
