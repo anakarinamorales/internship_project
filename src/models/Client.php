@@ -88,4 +88,14 @@ class Client
     {
         $this->responsible = $responsible;
     }
+
+    public function getCpfCnpj()
+    {
+        return $this->cpf_cnpj;
+    }
+
+    public function setCpfCnpj(string $cpf_cnpj)
+    {
+        $this->cpf_cnpj = $cpf_cnpj;
+    }
 }

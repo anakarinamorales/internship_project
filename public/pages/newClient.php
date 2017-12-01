@@ -62,6 +62,11 @@
                                     </div>
 
                                     <div class="col-lg-6 form-group">
+                                        <label for="surname">CPF/CNPJ </label>
+                                        <input id="cpf_cnpj" name="cpf_cnpj" class="form-control" placeholder="ex.: 02361854906">
+                                    </div>
+
+                                    <div class="col-lg-6 form-group">
                                         <label for="phone">Telefone </label>
                                         <input id="phone" name="phone" class="form-control" placeholder="ex.: (99)99999-9999">
                                     </div>
@@ -70,7 +75,15 @@
                                         <label for="email">E-mail </label>
                                         <input id="email" name="email" class="form-control" placeholder="ex.: email@email.com">
                                     </div>
-
+                                    
+                                     <div class="col-lg-12 form-group">
+                                        <label>
+                                            <br>
+                                            <p class="form-control-static">
+                                                Endereço
+                                            </p>
+                                        </label>
+                                    </div>
 
                                     <div class="col-lg-8 form-group">
                                         <label for="street">Rua </label>
@@ -113,7 +126,12 @@
                                     </div>
 
                                     <div class="col-lg-12 form-group">
-                                        <label><p class="form-control-static">Dados do Responsável</p></label>
+                                        <label>
+                                            <br>
+                                            <p class="form-control-static">
+                                            Dados do Responsável
+                                            </p>
+                                        </label>
                                     </div>
 
                                     <div class="col-lg-6 form-group">

@@ -24,6 +24,7 @@
 	$client->setId($_POST['id']);
 	$client->setFirstName($_POST['firstName']);
 	$client->setSurname($_POST['surname']);
+	$client->setCpfCnpj($_POST['cpf_cnpj']);
 	$client->setPhone($_POST['phone']);
 	$client->setEmail($_POST['email']);
 

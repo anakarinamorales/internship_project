@@ -78,7 +78,7 @@
                                             echo('<tr class="'.$evenOdd.' gradeX">');
                                             echo('<td>'.$client->getId().'</td>');
                                             echo('<td>'.$client->getFirstName().' '.$client->getSurname().'</td>');
-                                            echo('<td>NULL</td>');
+                                            echo('<td>'.$client->getCpfCnpj().'</td>');
                                             echo('<td>'.$client->getPhone().'</td>');
 
 											

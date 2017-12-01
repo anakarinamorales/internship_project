@@ -65,7 +65,10 @@ $client = $clientController->getClientById($clientId);
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        <a href="editClient.php?id=<?= $clientId ?>"><i class="glyphicon glyphicon-pencil"></i></a> Informações do Cliente
+                        <a href="editClient.php?id=<?= $clientId ?>">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a> 
+                        Informações do Cliente
                     </div>
                     <div class="panel-body">
                         <div class="col-lg-6 form-group">
@@ -79,6 +82,11 @@ $client = $clientController->getClientById($clientId);
                             </div>
 
                             <div class="col-lg-6 form-group">
+                                <label for="surname">CPF/CNPJ</label>
+                                <input id="cpf_cnpj" name="cpf_cnpj" class="form-control" <input value="<?= $client['cpf_cnpj'] ?>" disabled/>
+                            </div>
+
+                            <div class="col-lg-6 form-group">
                                 <label for="phone">Telefone </label>
                                 <input id="phone" name="phone" class="form-control" <input value="<?= $client['phone'] ?>" disabled/>
                             </div>
@@ -88,6 +96,14 @@ $client = $clientController->getClientById($clientId);
                                 <input id="email" name="email" class="form-control" <input value="<?= $client['email'] ?>" disabled/>
                             </div>
 
+                            <div class="col-lg-12 form-group">
+                                <label>
+                                    <br>
+                                    <p class="form-control-static">
+                                        Endereço
+                                    </p>
+                                </label>
+                            </div>
 
                             <div class="col-lg-8 form-group">
                                 <label for="street">Rua </label>
@@ -130,7 +146,12 @@ $client = $clientController->getClientById($clientId);
                             </div>
 
                             <div class="col-lg-12 form-group">
-                                <label><p class="form-control-static">Dados do Responsável</p></label>
+                                <label>
+                                    <br>
+                                    <p class="form-control-static">
+                                        Dados do Responsável
+                                    </p>
+                                </label>
                             </div>
 
                             <div class="col-lg-6 form-group">

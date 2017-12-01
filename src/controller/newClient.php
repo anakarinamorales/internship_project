@@ -21,8 +21,11 @@
 	$client = new Client();
 	$client->setFirstName($_POST['name']);
 	$client->setSurname($_POST['surname']);
+	$client->setCpfCnpj($_POST['cpf_cnpj']);
 	$client->setPhone($_POST['phone']);
 	$client->setPhone($_POST['email']);
+
+	// print_r($client); exit();
 	
 	$address = new Address();
 	$address->setStreet($_POST['street']);
@@ -44,8 +47,12 @@
 	
 	$client->setAddress($address);
 	$client->setResponsible($responsible);
+
 	
 	$clientController->insert($client);
+
+	// print_r($client->getId()); exit();
+
 	
 	if ($client->getId() > 0) {
 		header("Location: http://".$host."/public/pages/clients.php?msg=Cliente cadastrado com sucesso!");

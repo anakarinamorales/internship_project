@@ -73,6 +73,11 @@ $client = $clientController->getClientById($clientId);
                             </div>
 
                             <div class="col-lg-6 form-group">
+                                <label for="surname">CPF/CNPJ</label>
+                                <input id="cpf_cnpj" name="cpf_cnpj" class="form-control" value="<?= $client['cpf_cnpj'] ?>" />
+                            </div>
+
+                            <div class="col-lg-6 form-group">
                                 <label for="surname">Sobrenome </label>
                                 <input id="surname" name="surname" class="form-control" <input value="<?= $client['surname'] ?>" />
                             </div>
@@ -85,6 +90,15 @@ $client = $clientController->getClientById($clientId);
                             <div class="col-lg-6 form-group">
                                 <label for="email">E-mail </label>
                                 <input id="email" name="email" class="form-control" <input value="<?= $client['email'] ?>" />
+                            </div>
+
+                            <div class="col-lg-12 form-group">
+                                <label>
+                                    <br>
+                                    <p class="form-control-static">
+                                        Endereço
+                                    </p>
+                                </label>
                             </div>
 
                             <input id="addressId" name="addressId" class="form-control" type="hidden" value="<?= $client['address'] ?>" />
@@ -130,7 +144,12 @@ $client = $clientController->getClientById($clientId);
                             </div>
 
                             <div class="col-lg-12 form-group">
-                                <label><p class="form-control-static">Dados do Responsável</p></label>
+                                <label>
+                                    <br>
+                                    <p class="form-control-static">
+                                        Dados do Responsável
+                                    </p>
+                                </label>
                             </div>
 
                             <input id="responsibleId" name="responsibleId" class="form-control" type="hidden" value="<?= $client['responsible'] ?>" />

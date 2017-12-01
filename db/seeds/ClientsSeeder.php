@@ -17,6 +17,7 @@ class ClientsSeeder extends AbstractSeed
         	$data[] = [
 				'first_name' => $faker->firstName,
 				'surname' => $faker->lastName,
+                'cpf_cnpj' => '00000000000',
 				'phone' => $faker->phoneNumber,
                 'email' => $faker->email,
 				'address' => $addressesList[$value]['id'],
