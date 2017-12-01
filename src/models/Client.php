@@ -13,6 +13,7 @@ class Client
     private $first_name;
     private $surname;
     private $phone;
+    private $cpf_cnpj;
     private $email;
     private $address;
     private $responsible;
