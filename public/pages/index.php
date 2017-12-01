@@ -32,7 +32,7 @@
     <body>
         <div id="wrapper">
             <!-- Navigation -->
-            <?php include 'navigation.php'?>
+            <?php include 'navigation.php';?>
 
             <!-- CONTEÚDO -->
             <div id="page-wrapper">
@@ -45,11 +45,11 @@
                 <div class="row">
                     <!-- Flots -->
                     <div class="col-lg-8">
-                        <?php include 'flots.php'?>
+                        <?php include 'flots.php';?>
                     </div>
 
                     <!-- Notifications Panel -->
-                    <?php include 'notifications.php'?>
+                    <?php include 'notifications.php';?>
                 </div>
             </div>
         </div>
