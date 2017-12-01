@@ -8,7 +8,7 @@ class ClientsSeeder extends AbstractSeed
 
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('pt_BR');
         $addressesList = $this->fetchAll('SELECT id FROM addresses');
         $responsiblesList = $this->fetchAll('SELECT id FROM responsibles');
 
@@ -17,7 +17,7 @@ class ClientsSeeder extends AbstractSeed
         	$data[] = [
 				'first_name' => $faker->firstName,
 				'surname' => $faker->lastName,
-                'cpf_cnpj' => '00000000000',
+                'cpf_cnpj' => $faker->cpf(false),
 				'phone' => $faker->phoneNumber,
                 'email' => $faker->email,
 				'address' => $addressesList[$value]['id'],

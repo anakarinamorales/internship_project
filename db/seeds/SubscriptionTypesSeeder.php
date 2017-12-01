@@ -8,7 +8,7 @@ class SubscriptionTypesSeeder extends AbstractSeed
 
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('pt_BR');
         $typesList = array('Mensal', 'Semestral', 'Anual');
 
         //seeding data

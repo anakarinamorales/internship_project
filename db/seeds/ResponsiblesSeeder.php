@@ -8,7 +8,7 @@ class ResponsiblesSeeder extends AbstractSeed
 
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('pt_BR');
 
         //seeding data
         foreach(range(0, 9) as $value) {

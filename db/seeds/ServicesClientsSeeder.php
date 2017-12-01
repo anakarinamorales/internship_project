@@ -8,7 +8,7 @@ class ServicesClientsSeeder extends AbstractSeed
 
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('pt_BR');
         $clientsList = $this->fetchAll('SELECT id FROM clients');
         $servicesList = $this->fetchAll('SELECT id FROM services');
         $subscriptionTypesList = $this->fetchAll('SELECT id FROM subscription_types');

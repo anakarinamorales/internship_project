@@ -8,7 +8,7 @@ class ServicesSeeder extends AbstractSeed
 
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('pt_BR');
         $typesList = array('Hospedagem', 'Email', 'Hospedagem e Email');
 
         //seeding data

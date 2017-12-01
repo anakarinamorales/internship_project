@@ -8,7 +8,7 @@ class BillAlertsSeeder extends AbstractSeed
 
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('pt_BR');
         $billsList = $this->fetchAll('SELECT id FROM bills');
 
         //seeding data
