@@ -38,7 +38,9 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header"></h1>
+                        <h1 class="page-header">
+                            
+                        </h1>
                     </div>
                 </div>
 
@@ -154,15 +156,16 @@
                                         <input id="responsibleEmail" name="responsibleEmail" class="form-control" placeholder="ex.: email@email.com">
                                     </div>
 
-                                    <div class="col-lg-8">
-                                        <button class="btn btn-outline btn-primary" type="submit">Cadastrar</button>
+                                    <div class="col-lg-12">
+                                        <br>
+                                        <button class="btn btn-outline btn-primary btn-group-justified" type="submit">Cadastrar</button>
                                     </div>
                                 </form>
                         </div>
                     </div>
                 </div>
                 <!-- Notifications Panel -->
-                <?php include 'notifications.php'?>
+                <?php include 'notifications.php';?>
             </div>
         </div>
         

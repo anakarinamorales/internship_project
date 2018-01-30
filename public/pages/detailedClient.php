@@ -65,14 +65,14 @@ $client = $clientController->getClientById($clientId);
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        <a href="editClient.php?id=<?= $clientId ?>">
-                            <i class="glyphicon glyphicon-pencil"></i>
-                        </a> 
-                        Informações do Cliente
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-lg-6 form-group">
-                            <label for="name">Nome:</label>
+                            <a href="editClient.php?id=<?= $clientId ?>">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </a> 
+                            Informações do Cliente
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-lg-6 form-group">
+                                <label for="name">Nome:</label>
                                 <input id="name" name="name" class="form-control" value="<?= $client['first_name'] ?>" disabled/>
                             </div>
 
@@ -174,13 +174,17 @@ $client = $clientController->getClientById($clientId);
                                 <input id="responsibleEmail" name="responsibleEmail" class="form-control" value="<?= $client['responsible_email'] ?>" disabled/>
                             </div>
 
-                            <div class="col-lg-8">
-                               <a href="editClient.php?id=<?= $clientId ?>"><i class="glyphicon glyphicon-pencil"></i> Edit</a> 
+                            <div class="col-lg-12">
+                                <br>
+                                <a class="btn btn-outline btn-primary btn-group-justified" href="editClient.php?id=<?= $clientId ?>">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                    Editar
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- <div class="panel panel-default">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             Serviços do Cliente
                         </div>
@@ -188,28 +192,28 @@ $client = $clientController->getClientById($clientId);
 
                     <div class="panel-body">
                          <?php //include 'clientContractedServices.php';?>
-                    </div> -->
-                </div>
+                     </div>
+                 </div>
 
-                <!-- Notifications Panel -->
-                <?php include 'notifications.php';?>
-            </div>
-        </div>
-    </div>
-    
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+                 <!-- Notifications Panel -->
+                 <?php include 'notifications.php';?>
+             </div>
+         </div>
+     </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+     <!-- jQuery -->
+     <script src="../vendor/jquery/jquery.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+     <!-- Bootstrap Core JavaScript -->
+     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+     <!-- Metis Menu Plugin JavaScript -->
+     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Custom JavaScript -->
-    <script src="../js/custom.js"></script>
-</body>
-</html>
+     <!-- Custom Theme JavaScript -->
+     <script src="../dist/js/sb-admin-2.js"></script>
+
+     <!-- Custom JavaScript -->
+     <script src="../js/custom.js"></script>
+ </body>
+ </html>

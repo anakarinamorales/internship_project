@@ -71,8 +71,9 @@
                                         <input class="form-control" placeholder="ex.: email@email.com" id="userEmail" name="userEmail">
                                     </div>
 
-                                    <div class="col-lg-8 form-group" id="cadastrar">
-                                        <button type="submit" class="btn btn-outline btn-primary">Cadastrar</button>
+                                    <div class="col-lg-12 form-group" id="cadastrar">
+                                        <br>
+                                        <button type="submit" class="btn btn-outline btn-primary btn-group-justified">Cadastrar</button>
                                     </div>
                                 </form>
                             </div>

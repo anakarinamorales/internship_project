@@ -174,8 +174,9 @@ $client = $clientController->getClientById($clientId);
                                 <input id="responsibleEmail" name="responsibleEmail" class="form-control" value="<?= $client['responsible_email'] ?>" />
                             </div>
 
-                            <div class="col-lg-8">
-                                <button class="btn btn-outline btn-primary" type="submit">Atualizar</button>
+                            <div class="col-lg-12">
+                                <br>
+                                <button class="btn btn-outline btn-primary btn-group-justified" type="submit">Atualizar</button>
                             </div>
                         </form>
                     </div>

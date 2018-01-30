@@ -94,8 +94,9 @@
                                     </label>
                                 </div>
                     
-                                <div class="col-lg-6">
-                                    <button type="submit" class="btn btn-outline btn-primary">
+                                <div class="col-lg-12">
+                                    <br>
+                                    <button type="submit" class="btn btn-outline btn-primary btn-group-justified">
                                         Cadastrar
                                     </button>
                                 </div>
