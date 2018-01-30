@@ -54,6 +54,6 @@
 	if ($clientUpdateCount + $responsibleUpdateCount + $addressUpdateCount == 3) {
 		header("Location: http://".$host."/public/pages/clients.php?msg=Cliente editado com sucesso!");
 	} else {
-		header("Location: http://".$host."/public/pages/newClient.php?msg=Erro ao salvar as alterações!");
+		header("Location: http://".$host."/public/pages/editClient.php?id=".$_POST['id']."&msg=Erro ao salvar as alterações!");
 	}
 ?>

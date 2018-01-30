@@ -69,27 +69,27 @@ $client = $clientController->getClientById($clientId);
 
                             <div class="col-lg-6 form-group">
                                 <label for="firstName">Nome</label>
-                                <input id="firstName" name="firstName" class="form-control" value="<?= $client['first_name'] ?>" />
+                                <input id="firstName" name="firstName" class="form-control" value="<?= $client['first_name'] ?>" required/>
                             </div>
 
                             <div class="col-lg-6 form-group">
                                 <label for="surname">CPF/CNPJ</label>
-                                <input id="cpf_cnpj" name="cpf_cnpj" class="form-control" value="<?= $client['cpf_cnpj'] ?>" />
+                                <input id="cpf_cnpj" name="cpf_cnpj" class="form-control" value="<?= $client['cpf_cnpj'] ?>" required/>
                             </div>
 
                             <div class="col-lg-6 form-group">
-                                <label for="surname">Sobrenome </label>
-                                <input id="surname" name="surname" class="form-control" <input value="<?= $client['surname'] ?>" />
+                                <label for="surname">Sobrenome</label>
+                                <input id="surname" name="surname" class="form-control" value="<?= $client['surname'] ?>" required/>
                             </div>
 
                             <div class="col-lg-6 form-group">
-                                <label for="phone">Telefone </label>
-                                <input id="phone" name="phone" class="form-control" <input value="<?= $client['phone'] ?>" />
+                                <label for="phone">Telefone</label>
+                                <input id="phone" name="phone" class="form-control" value="<?= $client['phone'] ?>" required/>
                             </div>
 
                             <div class="col-lg-6 form-group">
-                                <label for="email">E-mail </label>
-                                <input id="email" name="email" class="form-control" <input value="<?= $client['email'] ?>" />
+                                <label for="email">E-mail</label>
+                                <input id="email" name="email" class="form-control" value="<?= $client['email'] ?>" required/>
                             </div>
 
                             <div class="col-lg-12 form-group">
@@ -104,22 +104,22 @@ $client = $clientController->getClientById($clientId);
                             <input id="addressId" name="addressId" class="form-control" type="hidden" value="<?= $client['address'] ?>" />
 
                             <div class="col-lg-8 form-group">
-                                <label for="street">Rua </label>
-                                <input id="street" name="street" class="form-control" <input value="<?= $client['street'] ?>" />
+                                <label for="street">Rua</label>
+                                <input id="street" name="street" class="form-control" value="<?= $client['street'] ?>" />
                             </div>
 
                             <div class="col-lg-2 form-group">
-                                <label for="number">N° </label>
-                                <input id="number" name="number" class="form-control" <input value="<?= $client['number'] ?>" />
+                                <label for="number">N°</label>
+                                <input id="number" name="number" class="form-control" value="<?= $client['number'] ?>" />
                             </div>
 
                             <div class="col-lg-2 form-group">
-                                <label for="others">Complemento </label>
-                                <input id="others" name="others" class="form-control" <input value="<?= $client['others'] ?>" />
+                                <label for="others">Complemento</label>
+                                <input id="others" name="others" class="form-control" value="<?= $client['others'] ?>" />
                             </div>
 
                             <div class="col-lg-6 form-group">
-                                <label for="neighborhood">Bairro </label>
+                                <label for="neighborhood">Bairro</label>
                                 <input id="neighborhood" name="neighborhood" class="form-control" value="<?= $client['neighborhood'] ?>" />
                             </div>
 
@@ -129,17 +129,17 @@ $client = $clientController->getClientById($clientId);
                             </div>
 
                             <div class="col-lg-8 form-group">
-                                <label for="city">Cidade </label>
+                                <label for="city">Cidade</label>
                                 <input id="city" name="city" class="form-control" value="<?= $client['city'] ?>" />
                             </div>
 
                             <div class="col-lg-2 form-group">
-                                <label for="state">UF </label>
+                                <label for="state">UF</label>
                                 <input id="state" name="state" class="form-control" value="<?= $client['state'] ?>" />
                             </div>
 
                             <div class="col-lg-2">
-                                <label for="country">País </label>
+                                <label for="country">País</label>
                                 <input id="country" name="country" class="form-control" value="<?= $client['country'] ?>" />
                             </div>
 
@@ -155,22 +155,22 @@ $client = $clientController->getClientById($clientId);
                             <input id="responsibleId" name="responsibleId" class="form-control" type="hidden" value="<?= $client['responsible'] ?>" />
 
                             <div class="col-lg-6 form-group">
-                                <label for="responsibleName">Nome </label>
+                                <label for="responsibleName">Nome</label>
                                 <input id="responsibleName" name="responsibleName" class="form-control" value="<?= $client['responsible_name'] ?>" />
                             </div>
 
                             <div class="col-lg-6 form-group">
-                                <label for="responsibleSurname">Sobrenome </label>
+                                <label for="responsibleSurname">Sobrenome</label>
                                 <input id="responsibleSurname" name="responsibleSurname" class="form-control" value="<?= $client['responsible_surname'] ?>" />
                             </div>
 
                             <div class="col-lg-6 form-group">
-                                <label for="responsiblePhone">Telefone </label>
+                                <label for="responsiblePhone">Telefone</label>
                                 <input id="responsiblePhone" name="responsiblePhone" class="form-control" value="<?= $client['responsible_phone'] ?>" />
                             </div>
 
                             <div class="col-lg-6 form-group">
-                                <label for="responsibleEmail">E-mail </label>
+                                <label for="responsibleEmail">E-mail</label>
                                 <input id="responsibleEmail" name="responsibleEmail" class="form-control" value="<?= $client['responsible_email'] ?>" />
                             </div>
 
